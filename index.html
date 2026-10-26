@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Vaelo — despesas em grupo, sem entregar seus dados</title>
+<meta name="description" content="Divida despesas com amigos, família e viagens. Os dados ficam nos seus aparelhos e viajam cifrados de ponta a ponta.">
+<meta name="theme-color" content="#145c48">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f5f7f4;--fg:#17201c;--muted:#53605a;--brand:#145c48;--card:#fff;--line:#dfe5e1}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1513;--fg:#e8eeea;--muted:#a3b0aa;--brand:#3fae8c;--card:#18201d;--line:#26302c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:880px;margin:0 auto;padding:48px 16px 32px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:56px}
+header img{width:40px;height:40px}
+header span{font-weight:700;font-size:1.25rem}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0 0 32px}
+.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:12px}
+.cta:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:64px 0 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h2{font-size:1.05rem;margin:0 0 6px}
+.card p{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.9rem}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+  <header><img src="icon.svg" alt=""><span>Vaelo</span></header>
+  <h1>Despesas em grupo, sem entregar seus dados.</h1>
+  <p class="lead">Divida contas da viagem, da casa ou do rolê com quem você quiser. Os lançamentos ficam nos seus aparelhos e só viajam cifrados — nem nós conseguimos ler.</p>
+  <a class="cta" href="https://app.vaelo.club/">Abrir o Vaelo</a>
+  <section class="grid">
+    <div class="card"><h2>Cifrado de ponta a ponta</h2><p>O servidor só repassa dados cifrados entre os membros do grupo.</p></div>
+    <div class="card"><h2>Seus dados, seus aparelhos</h2><p>Funciona sem conexão e sincroniza quando a internet volta.</p></div>
+    <div class="card"><h2>Do jeito que vocês dividem</h2><p>Partes iguais, valores exatos, porcentagem ou cotas, com quem deve quanto simplificado.</p></div>
+    <div class="card"><h2>Convite por link</h2><p>Mande o link para o grupo e cada um entra com o próprio e-mail.</p></div>
+  </section>
+  <footer>Vaelo é um produto <a href="https://nexaduo.com">NexaDuo</a>. Disponível no navegador; app Android em breve.</footer>
+</main>
+</body>
+</html>
