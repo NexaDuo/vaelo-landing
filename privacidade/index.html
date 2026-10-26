@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Política de privacidade — Vaelo</title>
+<meta name="description" content="Como o Vaelo trata seus dados: lançamentos cifrados de ponta a ponta, guardados nos seus aparelhos.">
+<meta name="theme-color" content="#145c48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f5f7f4;--fg:#17201c;--muted:#53605a;--brand:#145c48;--line:#dfe5e1}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1513;--fg:#e8eeea;--muted:#a3b0aa;--brand:#3fae8c;--line:#26302c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:40px 16px}
+header a{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:700;margin-bottom:32px}
+header img{width:32px;height:32px}
+h1{font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.2;margin:0 0 8px}
+h2{font-size:1.15rem;margin:32px 0 8px}
+p,li{color:var(--fg)}
+.muted{color:var(--muted)}
+a{color:var(--brand)}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<header><a href="/"><img src="/icon.svg" alt="">Vaelo</a></header>
+<h1>Política de privacidade</h1>
+<p class="muted">Vigente desde 26 de outubro de 2026.</p>
+<p>O Vaelo é um app para dividir despesas em grupo, oferecido pela NexaDuo. Ele foi feito para que nós não precisemos ver os seus dados: os lançamentos ficam nos seus aparelhos e só passam pelos nossos servidores cifrados de ponta a ponta.</p>
+
+<h2>O que fica nos seus aparelhos</h2>
+<p>Grupos, membros, despesas, pagamentos e o seu nome no app são guardados no armazenamento local do navegador ou do app, cifrados. Ao sair da conta você pode apagar esses dados do aparelho.</p>
+
+<h2>O que passa pelos nossos servidores</h2>
+<ul>
+<li><strong>Conta:</strong> o seu e-mail; se você entrar com o Google, também o nome e o identificador que o Google nos envia; e as chaves públicas das Passkeys que você cadastrar.</li>
+<li><strong>Sincronização:</strong> os lançamentos do grupo viajam como blocos cifrados entre os aparelhos dos membros. Não temos a chave para lê-los. Cada bloco é apagado em até 90 dias.</li>
+<li><strong>Metadados técnicos:</strong> para funcionar, o servidor vê qual conta enviou cada bloco, quando, o tamanho e um identificador do grupo (não o nome). Os registros de acesso incluem endereço IP e ficam guardados pelo tempo dos nossos provedores de infraestrutura.</li>
+<li><strong>Adicionar aparelho:</strong> o pedido de pareamento entre dois aparelhos da mesma conta fica no servidor por no máximo 10 minutos.</li>
+</ul>
+
+<h2>Com quem compartilhamos</h2>
+<p>Não vendemos dados, não exibimos anúncios e não usamos ferramentas de análise ou rastreamento. Usamos estes provedores, apenas para operar o serviço:</p>
+<ul>
+<li><strong>Supabase</strong> — login, banco de dados e retransmissão dos blocos cifrados (servidores nos EUA).</li>
+<li><strong>Cloudflare Turnstile</strong> — verificação anti-robô na tela de login.</li>
+<li><strong>Resend</strong> — envio do código de login por e-mail.</li>
+<li><strong>Google</strong> — somente se você escolher entrar com o Google.</li>
+<li><strong>GitHub Pages</strong> — hospedagem do site e do app web.</li>
+</ul>
+
+<h2>Membros do grupo</h2>
+<p>Quem participa de um grupo vê os lançamentos daquele grupo. A proteção do Vaelo é contra terceiros, não entre membros. Cada membro guarda a própria cópia do histórico do grupo.</p>
+
+<h2>Seus direitos</h2>
+<p>Pela LGPD, você pode pedir acesso, correção ou exclusão dos seus dados e tirar dúvidas sobre o tratamento. Escreva para <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>. Para excluir a conta, veja <a href="/excluir-conta/">Excluir conta</a>.</p>
+
+<h2>Crianças</h2>
+<p>O Vaelo não é direcionado a menores de 13 anos.</p>
+
+<h2>Mudanças</h2>
+<p>Se esta política mudar, a nova versão será publicada nesta página com a data de vigência.</p>
+<footer><a href="/">Início</a> · <a href="/privacidade/">Privacidade</a> · <a href="/excluir-conta/">Excluir conta</a> · Contato: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a></footer>
+</main>
+</body>
+</html>
