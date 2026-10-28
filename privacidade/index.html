@@ -3,32 +3,193 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Política de privacidade — Vaelo</title>
 <meta name="description" content="Como o Vaelo trata seus dados: lançamentos cifrados de ponta a ponta, guardados nos seus aparelhos.">
-<meta name="theme-color" content="#145c48">
+<meta name="theme-color" content="#16171a">
 <link rel="icon" href="/favicon.png?v=3" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <style>
-:root{--bg:#f5f7f4;--fg:#17201c;--muted:#53605a;--brand:#145c48;--line:#dfe5e1}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1513;--fg:#e8eeea;--muted:#a3b0aa;--brand:#3fae8c;--line:#26302c}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:40px 16px}
-header a{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:700;margin-bottom:32px}
-header img{width:32px;height:32px}
-h1{font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.2;margin:0 0 8px}
-h2{font-size:1.15rem;margin:32px 0 8px}
-p,li{color:var(--fg)}
-.muted{color:var(--muted)}
-a{color:var(--brand)}
-footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;color:var(--muted);font-size:.9rem}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/schibsted-grotesk.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+  --ground: #f4f4f1;
+  --surface: #fafaf7;
+  --ink: #16171a;
+  --muted: #56585e;
+  --line: #d6d5cf;
+  --line-strong: #16171a;
+  --band: #16171a;
+  --on-band: #f4f4f1;
+  --on-band-muted: #b8b8b2;
+  --amber: #f5a524;
+  --on-amber: #16171a;
+  --wash: #ebebe6;
+  --focus: #16171a;
+  --focus-on-band: #f5a524;
+  --rule: 1px;
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--ground);
+  font-synthesis: none;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #16171a;
+    --surface: #1d1e22;
+    --ink: #ecebe6;
+    --muted: #a7a7a1;
+    --line: #34353b;
+    --line-strong: #ecebe6;
+    --band: #2b2d33;
+    --on-band: #ecebe6;
+    --on-band-muted: #a9a9a3;
+    --wash: #25262b;
+    --focus: #f5a524;
+    --focus-on-band: #f5a524;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); }
+::selection { background: var(--amber); color: var(--on-amber); }
+a { color: inherit; text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.band :focus-visible { outline-color: var(--focus-on-band); }
+
+/* Faixa Basalto curta */
+.band {
+  background: var(--band);
+  color: var(--on-band);
+  position: relative;
+  margin-bottom: 28px;
+  padding-bottom: 8px;
+}
+.band-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: .75rem 16px 1.25rem;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -.03em;
+  color: var(--on-band);
+  text-decoration: none;
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: -23px;
+  width: 100%;
+  height: 24px;
+  fill: var(--band);
+  display: block;
+  pointer-events: none;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: .5rem 16px 3rem;
+}
+h1 {
+  font-size: clamp(1.7rem, 5vw, 2.3rem);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  margin: 0 0 8px;
+  font-weight: 750;
+  color: var(--ink);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+h2 {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  margin: 32px 0 8px;
+  font-weight: 700;
+  color: var(--ink);
+}
+p, li {
+  color: var(--ink);
+}
+p {
+  margin: .5rem 0 1rem;
+}
+ul {
+  margin: .5rem 0 1.25rem;
+  padding-left: 1.4rem;
+}
+li {
+  margin-bottom: .4rem;
+}
+.muted {
+  color: var(--muted);
+}
+main p a, main li a {
+  font-weight: 600;
+}
+footer {
+  border-top: var(--rule) solid var(--line);
+  margin-top: 40px;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+footer a {
+  color: inherit;
+}
+footer a:hover {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
+<header class="band">
+  <div class="band-inner">
+    <a href="/" class="brand">
+      <img src="/icon-192.png" width="32" height="32" alt="" class="brand-icon">
+      <span>Vaelo</span>
+    </a>
+  </div>
+  <svg class="wave" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0 0h400v6c-22 0-30 16-55 16S310 6 285 6s-35 16-60 16-35-16-60-16-35 16-60 16S70 6 45 6 15 15 0 15Z" />
+  </svg>
+</header>
 <main>
-<header><a href="/"><img src="/icon-192.png" alt="">Vaelo</a></header>
 <h1>Política de privacidade</h1>
 <p class="muted">Vigente desde 26 de outubro de 2026.</p>
 <p>O Vaelo é um app para dividir despesas em grupo, oferecido pela NexaDuo. Ele foi feito para que nós não precisemos ver os seus dados: os lançamentos ficam nos seus aparelhos e só passam pelos nossos servidores cifrados de ponta a ponta.</p>

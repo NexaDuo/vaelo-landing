@@ -3,51 +3,401 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Vaelo — despesas em grupo, sem entregar seus dados</title>
 <meta name="description" content="Divida despesas com amigos, família e viagens. Os dados ficam nos seus aparelhos e viajam cifrados de ponta a ponta.">
-<meta name="theme-color" content="#145c48">
+<meta name="theme-color" content="#16171a">
 <link rel="icon" href="favicon.png?v=3" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <style>
-:root{--bg:#f5f7f4;--fg:#17201c;--muted:#53605a;--brand:#145c48;--card:#fff;--line:#dfe5e1}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1513;--fg:#e8eeea;--muted:#a3b0aa;--brand:#3fae8c;--card:#18201d;--line:#26302c}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:880px;margin:0 auto;padding:48px 16px 32px}
-header{display:flex;align-items:center;gap:12px;margin-bottom:56px}
-header img{width:40px;height:40px}
-header span{font-weight:700;font-size:1.25rem}
-h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
-.lead{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0 0 32px}
-.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:12px}
-.cta:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:64px 0 48px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.card h2{font-size:1.05rem;margin:0 0 6px}
-.card p{margin:0;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.9rem}
-footer a{color:inherit}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("schibsted-grotesk.woff2") format("woff2"), url("/schibsted-grotesk.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+  --ground: #f4f4f1;
+  --surface: #fafaf7;
+  --ink: #16171a;
+  --muted: #56585e;
+  --line: #d6d5cf;
+  --line-strong: #16171a;
+  --band: #16171a;
+  --on-band: #f4f4f1;
+  --on-band-muted: #b8b8b2;
+  --amber: #f5a524;
+  --amber-press: #df9214;
+  --on-amber: #16171a;
+  --wash: #ebebe6;
+  --focus: #16171a;
+  --focus-on-band: #f5a524;
+  --radius: 10px;
+  --radius-lg: 18px;
+  --rule: 1px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--ground);
+  font-synthesis: none;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  accent-color: var(--ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #16171a;
+    --surface: #1d1e22;
+    --ink: #ecebe6;
+    --muted: #a7a7a1;
+    --line: #34353b;
+    --line-strong: #ecebe6;
+    --band: #2b2d33;
+    --on-band: #ecebe6;
+    --on-band-muted: #a9a9a3;
+    --wash: #25262b;
+    --focus: #f5a524;
+    --focus-on-band: #f5a524;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); }
+::selection { background: var(--amber); color: var(--on-amber); }
+a { color: inherit; text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.band :focus-visible { outline-color: var(--focus-on-band); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Faixa Basalto */
+.band {
+  background: var(--band);
+  color: var(--on-band);
+  position: relative;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+}
+.band-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.25rem 16px 2rem;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  margin-bottom: 1.5rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -.03em;
+  color: var(--on-band);
+  text-decoration: none;
+}
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: block;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+}
+.hero-copy {
+  max-width: 500px;
+}
+h1 {
+  font-size: clamp(2rem, 5.5vw, 2.85rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  font-weight: 750;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: var(--on-band-muted);
+  margin: 0 0 2rem;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .75rem 1.35rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s, transform .15s var(--ease);
+}
+.button:active {
+  transform: scale(.98);
+}
+.button.primary {
+  background: var(--amber);
+  color: var(--on-amber);
+  border: var(--rule) solid var(--amber);
+}
+.button.primary:hover {
+  background: var(--amber-press);
+  border-color: var(--amber-press);
+}
+.button.secondary-band {
+  background: transparent;
+  color: var(--on-band);
+  border: var(--rule) solid var(--on-band-muted);
+}
+.button.secondary-band:hover {
+  background: rgba(255, 255, 255, .08);
+  border-color: var(--on-band);
+}
+
+/* Moldura CSS para o print real */
+.phone-mockup {
+  width: 260px;
+  flex: none;
+}
+.phone-frame {
+  width: 100%;
+  border-radius: 28px;
+  border: 3px solid #2b2d33;
+  background: #000;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+  line-height: 0;
+}
+.phone-screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 540 / 1080;
+}
+
+/* A onda que fecha a faixa */
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: -23px;
+  width: 100%;
+  height: 24px;
+  fill: var(--band);
+  display: block;
+  pointer-events: none;
+}
+
+/* Área de Conteúdo Calcário */
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: .5rem 16px 2rem;
+}
+
+/* Lista Editorial em Fileiras com Pedras */
+.stone-list {
+  list-style: none;
+  margin: 1.5rem 0 2.5rem;
+  padding: 0;
+  border-top: var(--rule) solid var(--line);
+}
+.stone-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: .25rem;
+  padding: 1.25rem 0;
+  border-bottom: var(--rule) solid var(--line);
+  align-items: baseline;
+}
+.stone-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--ink);
+  transform: translateY(-2px);
+}
+.stone-row h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.stone-desc {
+  grid-column: 2;
+  margin: .25rem 0 0;
+  color: var(--muted);
+  font-size: .975rem;
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+/* Bloco No iPhone */
+.panel {
+  background: var(--surface);
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 20px;
+  margin: 2.5rem 0;
+}
+.panel h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .975rem;
+  line-height: 1.55;
+}
+.panel a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Rodapé */
+footer {
+  border-top: var(--rule) solid var(--line);
+  margin-top: 3rem;
+  padding: 1.5rem 0 2.5rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+footer a {
+  color: inherit;
+}
+footer a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 767px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .phone-mockup {
+    margin: 1rem auto 0;
+    width: min(240px, 75vw);
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
+<header class="band">
+  <div class="band-inner">
+    <div class="topbar">
+      <a href="/" class="brand">
+        <img src="icon-192.png" width="34" height="34" alt="" class="brand-icon">
+        <span>Vaelo</span>
+      </a>
+    </div>
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>Despesas em grupo, sem entregar seus dados.</h1>
+        <p class="lead">Os lançamentos ficam nos aparelhos e só viajam cifrados de ponta a ponta; nem nós lemos.</p>
+        <div class="actions">
+          <a class="button primary" href="https://play.google.com/store/apps/details?id=club.vaelo.android">Baixar na Google Play</a>
+          <a class="button secondary-band" href="https://app.vaelo.club/">Usar no navegador</a>
+        </div>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <img src="tela-1.webp" width="540" height="1080" alt="Tela do aplicativo Vaelo mostrando saldo de viagem, divisão de despesas e atalhos em calçadão" class="phone-screen">
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0 0h400v6c-22 0-30 16-55 16S310 6 285 6s-35 16-60 16-35-16-60-16-35 16-60 16S70 6 45 6 15 15 0 15Z" />
+  </svg>
+</header>
+
 <main>
-  <header><img src="icon-192.png" alt=""><span>Vaelo</span></header>
-  <h1>Despesas em grupo, sem entregar seus dados.</h1>
-  <p class="lead">Divida contas da viagem, da casa ou do rolê com quem você quiser. Os lançamentos ficam nos seus aparelhos e só viajam cifrados — nem nós conseguimos ler.</p>
-  <a class="cta" href="https://app.vaelo.club/">Abrir o Vaelo</a>
-  <section class="grid">
-    <div class="card"><h2>Cifrado de ponta a ponta</h2><p>O servidor só repassa dados cifrados entre os membros do grupo.</p></div>
-    <div class="card"><h2>Seus dados, seus aparelhos</h2><p>Funciona sem conexão e sincroniza quando a internet volta.</p></div>
-    <div class="card"><h2>Do jeito que vocês dividem</h2><p>Partes iguais, valores exatos, porcentagem ou cotas, com quem deve quanto simplificado.</p></div>
-    <div class="card"><h2>Convite por link</h2><p>Mande o link para o grupo e cada um entra com o próprio e-mail.</p></div>
-  </section>
-  <section class="card" style="margin:0 0 48px">
-    <h2>No iPhone</h2>
+  <ul class="stone-list" aria-label="Principais recursos">
+    <li class="stone-row">
+      <span class="stone-bullet" aria-hidden="true"></span>
+      <h2>Cifrado de ponta a ponta</h2>
+      <p class="stone-desc">O servidor só repassa dados cifrados entre os membros do grupo.</p>
+    </li>
+    <li class="stone-row">
+      <span class="stone-bullet" aria-hidden="true"></span>
+      <h2>Funciona sem internet e sincroniza depois</h2>
+      <p class="stone-desc">Os lançamentos ficam nos seus aparelhos. Dá para anotar qualquer despesa offline e sincronizar quando a conexão voltar.</p>
+    </li>
+    <li class="stone-row">
+      <span class="stone-bullet" aria-hidden="true"></span>
+      <h2>Do jeito que vocês dividem</h2>
+      <p class="stone-desc">Partes iguais, valores exatos, porcentagem ou cotas, com quem deve quanto simplificado.</p>
+    </li>
+    <li class="stone-row">
+      <span class="stone-bullet" aria-hidden="true"></span>
+      <h2>Convite por link direto</h2>
+      <p class="stone-desc">Mande o link para o grupo e cada um entra com o próprio e-mail.</p>
+    </li>
+  </ul>
+
+  <section class="panel" aria-labelledby="iphone-title">
+    <h2 id="iphone-title">No iPhone</h2>
     <p>Abra <a href="https://app.vaelo.club/">app.vaelo.club</a> no Safari, toque em Compartilhar e depois em “Adicionar à Tela de Início”. O Vaelo abre em tela cheia, como um app.</p>
   </section>
-  <footer>Vaelo é um produto <a href="https://nexaduo.com">NexaDuo</a>. Disponível no navegador; app Android em breve. · <a href="/privacidade/">Privacidade</a> · <a href="/excluir-conta/">Excluir conta</a></footer>
+
+  <footer>
+    Vaelo é um produto <a href="https://nexaduo.com">NexaDuo</a> · <a href="/privacidade/">Privacidade</a> · <a href="/excluir-conta/">Excluir conta</a>
+  </footer>
 </main>
 </body>
 </html>
