@@ -1,0 +1,23 @@
+# Vaelo
+
+> App para dividir despesas em grupo (viagem, casa e amigos) com privacidade e criptografia de ponta a ponta.
+
+Vaelo é um aplicativo desenvolvido pela NexaDuo, em português do Brasil e com valores em reais, voltado para divisão de despesas em grupo (viagens, casa, amigos).
+
+## Recursos e Funcionamento
+
+- **Privacidade:** Os dados ficam nos aparelhos das pessoas. O servidor atua apenas como relay cego repassando blocos cifrados de ponta a ponta. A NexaDuo não consegue ler os lançamentos. Os blocos cifrados são apagados do servidor em até 90 dias.
+- **Modo offline:** Funciona sem internet depois de entrar na conta. Registre despesas sem conexão e o aplicativo sincroniza automaticamente assim que a conexão voltar.
+- **Divisão flexível:** Permite divisão em partes iguais, valores exatos, porcentagem ou cotas. Mostra quem deve a quem com dívidas simplificadas e registra pagamentos (acertos).
+- **Convites por link:** Convite direto por link. Cada participante entra com o próprio e-mail (usando código de verificação recebido por e-mail) ou Passkey.
+- **Histórico seguro:** Excluir uma despesa pode ser desfeito; todas as versões ficam registradas no histórico.
+- **Gratuito:** Gratuito hoje, sem anúncios e sem ferramentas de análise ou rastreamento.
+- **Plataformas:** Disponível para Android na Google Play e no navegador para qualquer dispositivo (no iPhone, pelo Safari adicionando à Tela de Início).
+
+## Links
+
+- [Página oficial](https://vaelo.club/)
+- [Aplicativo Web](https://app.vaelo.club)
+- [Google Play Store](https://play.google.com/store/apps/details?id=club.vaelo.android)
+- [Política de privacidade](https://vaelo.club/privacidade/)
+- [Excluir conta](https://vaelo.club/excluir-conta/)

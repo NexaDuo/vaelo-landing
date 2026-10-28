@@ -5,8 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<title>Vaelo — despesas em grupo, sem entregar seus dados</title>
-<meta name="description" content="Divida despesas com amigos, família e viagens. Os dados ficam nos seus aparelhos e viajam cifrados de ponta a ponta.">
+<title>Vaelo: app para dividir despesas em grupo, com privacidade</title>
+<meta name="description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. Android e Web.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://vaelo.club/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vaelo">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://vaelo.club/">
+<meta property="og:title" content="Vaelo: app para dividir despesas em grupo, com privacidade">
+<meta property="og:description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. Android e Web.">
+<meta property="og:image" content="https://vaelo.club/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vaelo — aplicativo para dividir despesas em grupo com privacidade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vaelo: app para dividir despesas em grupo, com privacidade">
+<meta name="twitter:description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. Android e Web.">
+<meta name="twitter:image" content="https://vaelo.club/og.png">
+<meta name="twitter:image:alt" content="Vaelo — aplicativo para dividir despesas em grupo com privacidade">
 <meta name="theme-color" content="#16171a">
 <link rel="icon" href="favicon.png?v=3" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -268,6 +285,62 @@ main {
   max-width: 62ch;
 }
 
+/* Perguntas Frequentes */
+.faq-section {
+  margin: 2.5rem 0;
+}
+.faq-section h2 {
+  margin: 0 0 .75rem;
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.faq-list {
+  border-top: var(--rule) solid var(--line);
+}
+.faq-item {
+  border-bottom: var(--rule) solid var(--line);
+}
+.faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 48px;
+  padding: .85rem 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+.faq-summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.faq-item[open] .faq-summary::after {
+  content: "–";
+}
+.faq-summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.faq-desc {
+  margin: 0 0 1.15rem;
+  color: var(--muted);
+  font-size: .975rem;
+  line-height: 1.55;
+  max-width: 65ch;
+}
+
 /* Bloco No iPhone */
 .panel {
   background: var(--surface);
@@ -335,6 +408,133 @@ footer a:hover {
   }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nexaduo.com/#organization",
+      "name": "NexaDuo",
+      "url": "https://nexaduo.com",
+      "logo": "https://vaelo.club/icon-192.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vaelo.club/#website",
+      "url": "https://vaelo.club/",
+      "name": "Vaelo",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://nexaduo.com/#organization"
+      }
+    },
+    {
+      "@type": ["SoftwareApplication", "MobileApplication"],
+      "@id": "https://vaelo.club/#app",
+      "name": "Vaelo",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Android, Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "url": "https://vaelo.club/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=club.vaelo.android",
+      "installUrl": "https://app.vaelo.club/",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://nexaduo.com/#organization"
+      },
+      "screenshot": "https://vaelo.club/tela-1.webp",
+      "featureList": [
+        "Divisão de despesas em grupo para viagens, casa e amigos",
+        "Criptografia de ponta a ponta com dados guardados nos aparelhos",
+        "Servidor repassa apenas blocos cifrados, apagados em até 90 dias",
+        "A NexaDuo não consegue ler os lançamentos",
+        "Funciona sem internet e sincroniza quando a conexão volta",
+        "Divisão em partes iguais, valores exatos, porcentagem ou cotas",
+        "Mostra quem deve a quem com dívidas simplificadas",
+        "Registro de pagamentos e acertos",
+        "Convite por link direto com login por código por e-mail ou Passkey",
+        "Exclusão de despesas reversível com histórico de versões mantido",
+        "Gratuito, sem anúncios e sem ferramentas de análise ou rastreamento"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vaelo.club/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como dividir as despesas de uma viagem com amigos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Basta criar um grupo no Vaelo e enviar o link de convite para os participantes. Cada pessoa anota seus gastos e o aplicativo calcula quem deve a quem com as dívidas simplificadas. A divisão pode ser feita em partes iguais, valores exatos, porcentagem ou cotas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Vaelo é gratuito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, o Vaelo é gratuito hoje. O aplicativo não exibe anúncios e não utiliza nenhuma ferramenta de análise ou rastreamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Vaelo é uma alternativa ao Splitwise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, serve para o mesmo uso: dividir despesas em grupo (como viagem, casa ou amigos). A diferença é que os dados ficam cifrados nos aparelhos das pessoas e a NexaDuo não consegue ler os lançamentos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Meus dados ficam salvos onde? Vocês conseguem ver minhas despesas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os dados ficam salvos nos aparelhos das pessoas do grupo. O servidor apenas repassa blocos cifrados de ponta a ponta, que são apagados em até 90 dias, e a NexaDuo não consegue ler nenhum lançamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funciona sem internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Depois de entrar na conta, você lança despesas sem internet e o app sincroniza sozinho quando a conexão volta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como convidar pessoas para o grupo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O convite é feito compartilhando um link direto com os amigos. Cada pessoa entra no grupo com o próprio e-mail (usando código de acesso enviado por e-mail) ou com Passkey."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá para dividir de forma desigual (porcentagem, valores, cotas)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, você pode dividir em partes iguais, por valores exatos, por porcentagem ou por cotas. O app calcula os saldos de forma simplificada, registra os pagamentos de acerto e permite desfazer exclusões com histórico de versões."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tem para iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, pelo navegador em app.vaelo.club. No Safari do iPhone, basta tocar em Compartilhar e selecionar “Adicionar à Tela de Início” para usar o Vaelo em tela cheia como um aplicativo."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="band">
@@ -348,7 +548,7 @@ footer a:hover {
     <div class="hero">
       <div class="hero-copy">
         <h1>Despesas em grupo, sem entregar seus dados.</h1>
-        <p class="lead">Os lançamentos ficam nos aparelhos e só viajam cifrados de ponta a ponta; nem nós lemos.</p>
+        <p class="lead">O app para dividir as contas da viagem, da casa ou do rolê. Os lançamentos ficam nos aparelhos e só viajam cifrados de ponta a ponta; nem nós lemos.</p>
         <div class="actions">
           <a class="button primary" href="https://play.google.com/store/apps/details?id=club.vaelo.android">Baixar na Google Play</a>
           <a class="button secondary-band" href="https://app.vaelo.club/">Usar no navegador</a>
@@ -389,6 +589,44 @@ footer a:hover {
       <p class="stone-desc">Mande o link para o grupo e cada um entra com o próprio e-mail.</p>
     </li>
   </ul>
+
+  <section class="faq-section" aria-labelledby="faq-title">
+    <h2 id="faq-title">Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-summary">Como dividir as despesas de uma viagem com amigos?</summary>
+        <p class="faq-desc">Basta criar um grupo no Vaelo e enviar o link de convite para os participantes. Cada pessoa anota seus gastos e o aplicativo calcula quem deve a quem com as dívidas simplificadas. A divisão pode ser feita em partes iguais, valores exatos, porcentagem ou cotas.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">O Vaelo é gratuito?</summary>
+        <p class="faq-desc">Sim, o Vaelo é gratuito hoje. O aplicativo não exibe anúncios e não utiliza nenhuma ferramenta de análise ou rastreamento.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">O Vaelo é uma alternativa ao Splitwise?</summary>
+        <p class="faq-desc">Sim, serve para o mesmo uso: dividir despesas em grupo (como viagem, casa ou amigos). A diferença é que os dados ficam cifrados nos aparelhos das pessoas e a NexaDuo não consegue ler os lançamentos.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Meus dados ficam salvos onde? Vocês conseguem ver minhas despesas?</summary>
+        <p class="faq-desc">Os dados ficam salvos nos aparelhos das pessoas do grupo. O servidor apenas repassa blocos cifrados de ponta a ponta, que são apagados em até 90 dias, e a NexaDuo não consegue ler nenhum lançamento.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Funciona sem internet?</summary>
+        <p class="faq-desc">Sim. Depois de entrar na conta, você lança despesas sem internet e o app sincroniza sozinho quando a conexão volta.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Como convidar pessoas para o grupo?</summary>
+        <p class="faq-desc">O convite é feito compartilhando um link direto com os amigos. Cada pessoa entra no grupo com o próprio e-mail (usando código de acesso enviado por e-mail) ou com Passkey.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Dá para dividir de forma desigual (porcentagem, valores, cotas)?</summary>
+        <p class="faq-desc">Sim, você pode dividir em partes iguais, por valores exatos, por porcentagem ou por cotas. O app calcula os saldos de forma simplificada, registra os pagamentos de acerto e permite desfazer exclusões com histórico de versões.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Tem para iPhone?</summary>
+        <p class="faq-desc">Sim, pelo navegador em app.vaelo.club. No Safari do iPhone, basta tocar em Compartilhar e selecionar “Adicionar à Tela de Início” para usar o Vaelo em tela cheia como um aplicativo.</p>
+      </details>
+    </div>
+  </section>
 
   <section class="panel" aria-labelledby="iphone-title">
     <h2 id="iphone-title">No iPhone</h2>
