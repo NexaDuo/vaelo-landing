@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://*.clarity.ms; connect-src https://*.clarity.ms https://c.bing.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Vaelo: app para dividir despesas em grupo, com privacidade</title>
 <meta name="description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. Android e Web.">
@@ -535,6 +535,7 @@ footer a:hover {
   ]
 }
 </script>
+<script src="/clarity.js" async></script>
 </head>
 <body>
 <header class="band">
