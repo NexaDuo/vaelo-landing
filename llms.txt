@@ -17,6 +17,7 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, em português do Brasil e com 
 ## Links
 
 - [Página oficial](https://vaelo.club/)
+- [Vaelo Pro e Fundador](https://vaelo.club/pro/)
 - [Aplicativo Web](https://app.vaelo.club)
 - [Google Play Store](https://play.google.com/store/apps/details?id=club.vaelo.android)
 - [Política de privacidade](https://vaelo.club/privacidade/)
