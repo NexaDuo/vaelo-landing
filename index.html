@@ -206,6 +206,41 @@ h1 {
   border-color: var(--on-band);
 }
 
+/* Aviso "em breve nas lojas" no hero */
+.coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 1.25rem;
+  padding: .5rem .95rem .5rem .8rem;
+  border: var(--rule) dashed var(--on-band-muted);
+  border-radius: 999px;
+  color: var(--on-band);
+  font-size: .95rem;
+  line-height: 1.3;
+}
+.coming-soon strong { color: var(--amber); font-weight: 700; }
+.coming-soon .dot {
+  position: relative;
+  flex: none;
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  background: var(--amber);
+}
+.coming-soon .dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--amber);
+  animation: coming-soon-ping 1.8s var(--ease) infinite;
+}
+@keyframes coming-soon-ping {
+  0% { transform: scale(1); opacity: .7; }
+  80%, 100% { transform: scale(2.6); opacity: 0; }
+}
+
 /* Moldura CSS para o print real */
 .phone-mockup {
   width: 260px;
@@ -552,6 +587,7 @@ footer a:hover {
         <div class="actions">
           <a class="button primary" href="https://app.vaelo.club/">Usar no navegador</a>
         </div>
+        <p class="coming-soon"><span class="dot" aria-hidden="true"></span><span><strong>Em construção:</strong> apps para Android e iPhone em breve.</span></p>
       </div>
       <div class="phone-mockup">
         <div class="phone-frame">
