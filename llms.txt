@@ -12,7 +12,7 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, em português do Brasil e com 
 - **Convites por link:** Convite direto por link. Cada participante entra com o próprio e-mail (usando código de verificação recebido por e-mail) ou Passkey.
 - **Histórico seguro:** Excluir uma despesa pode ser desfeito; todas as versões ficam registradas no histórico.
 - **Gratuito:** Gratuito hoje, sem anúncios e sem ferramentas de análise ou rastreamento.
-- **Plataformas:** Disponível no navegador para qualquer dispositivo; no Android e no iPhone dá para adicionar à Tela de Início.
+- **Plataformas:** Disponível no navegador para qualquer dispositivo e no Android pelo Google Play (https://play.google.com/store/apps/details?id=club.vaelo.android); no iPhone dá para adicionar à Tela de Início.
 
 ## Links
 
