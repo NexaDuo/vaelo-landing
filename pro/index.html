@@ -276,9 +276,8 @@ main, .band-inner { max-width: 960px; }
 <span class="badge">economize ~37%</span>
 <p class="price">R$ 59,90/ano</p>
 <p>Até 5 grupos.</p>
-<!-- CHECKOUT: trocar href pelo link do provedor -->
-<a class="button primary" id="buy-pro-annual" href="mailto:alexandre@nexaduo.com?subject=Quero%20o%20Vaelo%20Pro%20anual">Quero assinar</a>
-<p class="payment-note">Pagamento por Pix. Estamos abrindo o checkout nos próximos dias; escreva para garantir sua vaga.</p>
+<stripe-buy-button id="buy-pro-annual" buy-button-id="buy_btn_1UYYhvLwd9z4kDhUanU8gEEg" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
+<p class="payment-note">Pagamento com cartão pelo Stripe.</p>
 </article>
 <article class="plan" id="fundador">
 <h3>Fundador vitalício</h3>
