@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-BR" data-title-pt="Termos de uso — Vaelo" data-title-en="Terms of service — Vaelo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Termos de uso — Vaelo</title>
+<meta name="description" content="Termos de uso do Vaelo, o app para dividir despesas em grupo com dados cifrados de ponta a ponta.">
+<link rel="canonical" href="https://vaelo.club/termos/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vaelo">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://vaelo.club/termos/">
+<meta property="og:title" content="Termos de uso — Vaelo">
+<meta property="og:description" content="Termos de uso do Vaelo, o app para dividir despesas em grupo com dados cifrados de ponta a ponta.">
+<meta property="og:image" content="https://vaelo.club/og.png">
+<meta name="theme-color" content="#16171a">
+<link rel="icon" href="/favicon.png?v=3" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<script src="/lang.js?v=1"></script>
+<style>
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/schibsted-grotesk.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light;
+  --ground: #f4f4f1;
+  --surface: #fafaf7;
+  --ink: #16171a;
+  --muted: #56585e;
+  --line: #d6d5cf;
+  --line-strong: #16171a;
+  --band: #16171a;
+  --on-band: #f4f4f1;
+  --on-band-muted: #b8b8b2;
+  --amber: #f5a524;
+  --on-amber: #16171a;
+  --wash: #ebebe6;
+  --focus: #16171a;
+  --focus-on-band: #f5a524;
+  --rule: 1px;
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--ground);
+  font-synthesis: none;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #16171a;
+    --surface: #1d1e22;
+    --ink: #ecebe6;
+    --muted: #a7a7a1;
+    --line: #34353b;
+    --line-strong: #ecebe6;
+    --band: #2b2d33;
+    --on-band: #ecebe6;
+    --on-band-muted: #a9a9a3;
+    --wash: #25262b;
+    --focus: #f5a524;
+    --focus-on-band: #f5a524;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); }
+::selection { background: var(--amber); color: var(--on-amber); }
+a { color: inherit; text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.band :focus-visible { outline-color: var(--focus-on-band); }
+
+/* Faixa Basalto curta */
+.band {
+  background: var(--band);
+  color: var(--on-band);
+  position: relative;
+  margin-bottom: 28px;
+  padding-bottom: 8px;
+}
+.band-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: .75rem 16px 1.25rem;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -.03em;
+  color: var(--on-band);
+  text-decoration: none;
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: -23px;
+  width: 100%;
+  height: 24px;
+  fill: var(--band);
+  display: block;
+  pointer-events: none;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: .5rem 16px 3rem;
+}
+h1 {
+  font-size: clamp(1.7rem, 5vw, 2.3rem);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  margin: 0 0 8px;
+  font-weight: 750;
+  color: var(--ink);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+h2 {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  margin: 32px 0 8px;
+  font-weight: 700;
+  color: var(--ink);
+}
+p, li {
+  color: var(--ink);
+}
+p {
+  margin: .5rem 0 1rem;
+}
+ul {
+  margin: .5rem 0 1.25rem;
+  padding-left: 1.4rem;
+}
+li {
+  margin-bottom: .4rem;
+}
+.muted {
+  color: var(--muted);
+}
+main p a, main li a {
+  font-weight: 600;
+}
+footer {
+  border-top: var(--rule) solid var(--line);
+  margin-top: 40px;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+footer a {
+  color: inherit;
+}
+footer a:hover {
+  color: var(--ink);
+}
+
+/* Seletor de idioma */
+.lang-switch {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: var(--rule) solid var(--on-band-muted);
+  border-radius: 999px;
+  visibility: hidden;
+}
+html[data-lang] .lang-switch { visibility: visible; }
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--on-band-muted);
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 650;
+  line-height: 1;
+  min-width: 44px;
+  min-height: 32px;
+  padding: 0 .7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.lang-btn:hover { color: var(--on-band); }
+.lang-btn[aria-pressed="true"] { background: var(--amber); color: var(--on-amber); }
+[data-l="en"] { display: none; }
+html[data-lang="en"] [data-l="en"] { display: block; }
+html[data-lang="en"] [data-l="pt"] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+<header class="band">
+  <div class="band-inner">
+    <a href="/" class="brand">
+      <img src="/icon-192.png" width="32" height="32" alt="" class="brand-icon">
+      <span>Vaelo</span>
+    </a>
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true" lang="pt-BR" aria-label="Português">PT</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0 0h400v6c-22 0-30 16-55 16S310 6 285 6s-35 16-60 16-35-16-60-16-35 16-60 16S70 6 45 6 15 15 0 15Z" />
+  </svg>
+</header>
+<main>
+<div data-l="pt" lang="pt-BR">
+<h1>Termos de uso</h1>
+<p class="muted">Vigentes desde 5 de novembro de 2026.</p>
+<p>Estes termos valem para o Vaelo: o app web em app.vaelo.club, os apps para Android e iPhone e este site. Ao criar uma conta ou usar o app, você concorda com eles. Se não concordar, não use o Vaelo.</p>
+
+<h2>1. Quem oferece o Vaelo</h2>
+<p>O Vaelo é oferecido pela NexaDuo (CNPJ 29.667.108/0001-14), com sede em Porto Alegre, RS, Brasil.</p>
+
+<h2>2. O que o Vaelo faz</h2>
+<ul>
+<li>O Vaelo registra despesas divididas e quanto cada pessoa deve. <strong>Ele não movimenta dinheiro</strong>: os pagamentos entre membros acontecem fora do app e são apenas anotados nele.</li>
+<li>A correção pelo IPCA ou INPC usa os números-índice oficiais do IBGE e é uma conta informativa. Ela não é assessoria jurídica, contábil ou financeira, e o Vaelo não cobra dívidas de ninguém.</li>
+<li>Os valores lançados são de responsabilidade de quem os lança. Confira os saldos antes de pagar ou cobrar alguém.</li>
+</ul>
+
+<h2>3. Conta, aparelhos e seus dados</h2>
+<ul>
+<li>Você entra com o seu e-mail, uma Passkey ou o Google. Mantenha o acesso ao e-mail e aos seus aparelhos em segurança.</li>
+<li>Os lançamentos ficam cifrados nos aparelhos dos membros. O servidor só repassa blocos cifrados e os apaga em até 90 dias, e a NexaDuo não tem a chave para lê-los. Por isso, <strong>não conseguimos recuperar dados</strong> se você perder todos os aparelhos e não tiver como entrar por outro aparelho da mesma conta ou pelos membros do grupo.</li>
+<li>O tratamento de dados pessoais está descrito na <a href="/privacidade/">Política de privacidade</a>.</li>
+</ul>
+
+<h2>4. Grupos e membros</h2>
+<p>Quem participa de um grupo vê todos os lançamentos dele. Qualquer membro ativo pode lançar, editar ou excluir despesas; todas as versões ficam no histórico e a exclusão pode ser desfeita. Convide só pessoas em quem você confia para ver esses dados.</p>
+
+<h2>5. Uso aceitável</h2>
+<p>Não use o Vaelo para atividades ilegais, para enganar outras pessoas sobre valores devidos, para enviar conteúdo malicioso ou para tentar acessar contas, grupos ou sistemas sem autorização. Podemos suspender contas que violem estes termos ou a lei.</p>
+
+<h2>6. Planos e pagamentos</h2>
+<ul>
+<li><strong>Grátis:</strong> todas as funções, incluindo a correção monetária, com até 5 despesas novas por dia em cada grupo.</li>
+<li><strong>Pro e Fundador:</strong> liberam despesas ilimitadas nos grupos escolhidos (até 5 no Pro e até 10 no Fundador) para todos os membros. Preços e condições ficam em <a href="/pro/">vaelo.club/pro</a>.</li>
+<li>Assinaturas se renovam no fim de cada período até você cancelar. Ao cancelar ou deixar de pagar, os grupos voltam ao limite grátis e nada é apagado.</li>
+<li>O Fundador é pago uma vez e vale enquanto o Vaelo for oferecido.</li>
+<li>Compras feitas pela web podem ser canceladas com reembolso em até 7 dias, conforme o Código de Defesa do Consumidor (art. 49). Compras feitas pela Google Play ou pela App Store seguem as regras de cobrança e reembolso da loja.</li>
+</ul>
+
+<h2>7. Disponibilidade e responsabilidade</h2>
+<p>O Vaelo funciona sem internet, mas a sincronização depende de serviços de terceiros e pode ficar indisponível. Mudamos e melhoramos o app com frequência. Nos limites permitidos pela lei, a NexaDuo não responde por perdas causadas por valores lançados errado, por acordos entre membros ou pela perda de aparelhos e chaves. Nada nestes termos afasta direitos garantidos pelo Código de Defesa do Consumidor.</p>
+
+<h2>8. Propriedade intelectual</h2>
+<p>A marca Vaelo, o app e este site pertencem à NexaDuo. Você mantém a titularidade do que lança no app.</p>
+
+<h2>9. Encerramento</h2>
+<p>Você pode excluir sua conta a qualquer momento pelo app; veja <a href="/excluir-conta/">Excluir conta</a>. Se o Vaelo for descontinuado, avisaremos com antecedência razoável, e os dados nos aparelhos continuam com os membros.</p>
+
+<h2>10. Lei aplicável</h2>
+<p>Estes termos seguem as leis do Brasil. Se você usa o Vaelo como consumidor, vale o foro do seu domicílio; nos demais casos, o foro de Porto Alegre, RS.</p>
+
+<h2>11. Mudanças</h2>
+<p>Se estes termos mudarem, a nova versão será publicada nesta página com a data de vigência. Mudanças importantes também serão avisadas no app.</p>
+
+<h2>12. Contato</h2>
+<p>Dúvidas sobre estes termos: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>. Veja também <a href="/suporte/">Suporte</a>.</p>
+</div>
+<div data-l="en" lang="en">
+<h1>Terms of service</h1>
+<p class="muted">Effective November 5, 2026.</p>
+<p>These terms apply to Vaelo: the web app at app.vaelo.club, the Android and iPhone apps, and this site. By creating an account or using the app, you agree to them. If you do not agree, do not use Vaelo. The Portuguese version prevails if the two differ.</p>
+
+<h2>1. Who provides Vaelo</h2>
+<p>Vaelo is provided by NexaDuo (CNPJ 29.667.108/0001-14), based in Porto Alegre, RS, Brazil.</p>
+
+<h2>2. What Vaelo does</h2>
+<ul>
+<li>Vaelo records shared expenses and how much each person owes. <strong>It does not move money</strong>: payments between members happen outside the app and are only recorded in it.</li>
+<li>Correction by the IPCA or INPC uses the official IBGE index numbers and is an informational calculation. It is not legal, accounting or financial advice, and Vaelo does not collect debts from anyone.</li>
+<li>Amounts entered are the responsibility of whoever enters them. Check the balances before paying or asking someone to pay.</li>
+</ul>
+
+<h2>3. Account, devices and your data</h2>
+<ul>
+<li>You sign in with your email, a passkey or Google. Keep access to your email and your devices secure.</li>
+<li>Entries are stored encrypted on the members' devices. The server only relays encrypted blocks and deletes them within 90 days, and NexaDuo does not have the key to read them. That is why <strong>we cannot recover data</strong> if you lose all your devices and cannot sign in from another device on the same account or through the group's members.</li>
+<li>How we handle personal data is described in the <a href="/privacidade/">Privacy policy</a> (in Portuguese).</li>
+</ul>
+
+<h2>4. Groups and members</h2>
+<p>Everyone in a group sees all of its entries. Any active member can add, edit or delete expenses; every version stays in the history and a deletion can be undone. Only invite people you trust to see this data.</p>
+
+<h2>5. Acceptable use</h2>
+<p>Do not use Vaelo for illegal activities, to mislead others about amounts owed, to send malicious content, or to try to access accounts, groups or systems without authorization. We may suspend accounts that violate these terms or the law.</p>
+
+<h2>6. Plans and payments</h2>
+<ul>
+<li><strong>Free:</strong> every feature, including inflation correction, with up to 5 new expenses per day in each group.</li>
+<li><strong>Pro and Founder:</strong> unlock unlimited expenses in the chosen groups (up to 5 with Pro and up to 10 with Founder) for all their members. Prices and conditions are at <a href="/pro/">vaelo.club/pro</a>.</li>
+<li>Subscriptions renew at the end of each period until you cancel. If you cancel or stop paying, the groups return to the free limit and nothing is deleted.</li>
+<li>Founder is paid once and lasts as long as Vaelo is offered.</li>
+<li>Purchases made on the web can be cancelled with a refund within 7 days, under the Brazilian Consumer Defense Code (art. 49). Purchases made through Google Play or the App Store follow the store's billing and refund rules.</li>
+</ul>
+
+<h2>7. Availability and liability</h2>
+<p>Vaelo works offline, but sync depends on third-party services and may be unavailable. We change and improve the app often. To the extent permitted by law, NexaDuo is not liable for losses caused by wrongly entered amounts, by agreements between members or by lost devices and keys. Nothing in these terms limits rights guaranteed by the Brazilian Consumer Defense Code.</p>
+
+<h2>8. Intellectual property</h2>
+<p>The Vaelo brand, the app and this site belong to NexaDuo. You keep ownership of what you enter in the app.</p>
+
+<h2>9. Termination</h2>
+<p>You can delete your account at any time from the app; see <a href="/excluir-conta/">Delete account</a> (in Portuguese). If Vaelo is discontinued, we will give reasonable notice, and the data on the devices stays with the members.</p>
+
+<h2>10. Governing law</h2>
+<p>These terms are governed by the laws of Brazil. If you use Vaelo as a consumer, the courts of your place of residence have jurisdiction; otherwise, the courts of Porto Alegre, RS.</p>
+
+<h2>11. Changes</h2>
+<p>If these terms change, the new version will be published on this page with its effective date. Important changes will also be announced in the app.</p>
+
+<h2>12. Contact</h2>
+<p>Questions about these terms: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>. See also <a href="/suporte/">Support</a>.</p>
+</div>
+<footer><a href="/">Início</a> · <a href="/privacidade/">Privacidade</a> · <a href="/termos/">Termos</a> · <a href="/excluir-conta/">Excluir conta</a> · Contato: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a></footer>
+</main>
+</body>
+</html>
