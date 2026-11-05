@@ -224,11 +224,10 @@ main, .band-inner { max-width: 960px; }
 .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.25rem; }
 .plan { background: var(--surface); border: var(--rule) solid var(--line); border-radius: 18px; padding: 1.25rem; scroll-margin-top: 1rem; }
 .plan h3 { margin: .5rem 0; }
-.price { font-size: 1.5rem; font-weight: 750; }
 .badge { display: inline-block; background: var(--amber); color: var(--on-amber); padding: .2rem .6rem; border-radius: 10px; font-size: .85rem; font-weight: 650; }
 .payment-note { font-size: .85rem; color: var(--muted); margin-top: .75rem; }
-/* Stripe's card is a fixed ~288px iframe: let it use the card padding, and stack the plans before it no longer fits. */
-.plan stripe-buy-button { display: block; margin-top: .75rem; }
+/* Stripe's card is a fixed ~288px iframe that already shows the price: it opens the card, and stack the plans before it no longer fits. */
+.plan stripe-buy-button { display: block; margin-bottom: .75rem; }
 @media (min-width: 980px) { .plan stripe-buy-button { margin-inline: -1rem; } }
 @media (max-width: 979px) { .plans { grid-template-columns: 1fr; } }
 </style>
@@ -265,26 +264,23 @@ main, .band-inner { max-width: 960px; }
 <h2 id="plans-title">Escolha seu plano</h2>
 <div class="plans">
 <article class="plan" id="pro-mensal">
-<h3>Pro mensal</h3>
-<p class="price">R$ 7,90/mês</p>
-<p>Até 5 grupos.</p>
 <stripe-buy-button id="buy-pro-monthly" buy-button-id="buy_btn_1UYYQxLwd9z4kDhUfIaZZi5i" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
+<h3>Pro mensal</h3>
+<p>Até 5 grupos.</p>
 <p class="payment-note">Pagamento com cartão pelo Stripe.</p>
 </article>
 <article class="plan" id="pro-anual">
+<stripe-buy-button id="buy-pro-annual" buy-button-id="buy_btn_1UYYhvLwd9z4kDhUanU8gEEg" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <h3>Pro anual</h3>
 <span class="badge">economize ~37%</span>
-<p class="price">R$ 59,90/ano</p>
 <p>Até 5 grupos.</p>
-<stripe-buy-button id="buy-pro-annual" buy-button-id="buy_btn_1UYYhvLwd9z4kDhUanU8gEEg" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <p class="payment-note">Pagamento com cartão pelo Stripe.</p>
 </article>
 <article class="plan" id="fundador">
+<stripe-buy-button id="buy-founder" buy-button-id="buy_btn_1UYY9TLwd9z4kDhUrUYo1XWA" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <h3>Fundador vitalício</h3>
 <span class="badge">pague uma vez</span>
-<p class="price">R$ 129</p>
 <p>Lote 1: 100 vagas. Depois, R$ 179. Até 10 grupos.</p>
-<stripe-buy-button id="buy-founder" buy-button-id="buy_btn_1UYY9TLwd9z4kDhUrUYo1XWA" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <p class="payment-note">Pagamento com cartão ou Pix pelo Stripe.</p>
 </article>
 </div>
