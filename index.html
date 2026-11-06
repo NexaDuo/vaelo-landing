@@ -5,25 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://*.clarity.ms; connect-src https://*.clarity.ms https://c.bing.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<title>Vaelo: app para dividir despesas em grupo, com privacidade</title>
-<meta name="description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. No navegador do celular ou do computador.">
+<title>Vaelo: app para dividir despesas em grupo, com privacidade e IPCA</title>
+<meta name="description" content="App para dividir despesas em grupo (viagem, casa, amigos) com dados cifrados nos aparelhos, funcionamento sem internet e correção pela inflação (IPCA/INPC). No celular ou computador.">
+<meta name="keywords" content="dividir despesas, app dividir contas, alternativa splitwise, despesas grupo viagem, rateio de contas, despesas da casa, correção ipca, inpc ibge, splitwise brasileiro, local first, criptografia ponta a ponta, vaelo">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://vaelo.club/">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vaelo">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://vaelo.club/">
-<meta property="og:title" content="Vaelo: app para dividir despesas em grupo, com privacidade">
-<meta property="og:description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. No navegador do celular ou do computador.">
+<meta property="og:title" content="Vaelo: app para dividir despesas em grupo, com privacidade e IPCA">
+<meta property="og:description" content="App para dividir despesas em grupo (viagem, casa, amigos) com dados cifrados nos aparelhos, funcionamento sem internet e correção pela inflação (IPCA/INPC). No celular ou computador.">
 <meta property="og:image" content="https://vaelo.club/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Vaelo — aplicativo para dividir despesas em grupo com privacidade">
+<meta property="og:image:alt" content="Vaelo — aplicativo para dividir despesas em grupo com privacidade e IPCA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vaelo: app para dividir despesas em grupo, com privacidade">
-<meta name="twitter:description" content="App para dividir despesas em grupo (viagem, casa, amigos). Grátis, funciona sem internet e os dados ficam cifrados nos aparelhos. No navegador do celular ou do computador.">
+<meta name="twitter:title" content="Vaelo: app para dividir despesas em grupo, com privacidade e IPCA">
+<meta name="twitter:description" content="App para dividir despesas em grupo (viagem, casa, amigos) com dados cifrados nos aparelhos, funcionamento sem internet e correção pela inflação (IPCA/INPC). No celular ou computador.">
 <meta name="twitter:image" content="https://vaelo.club/og.png">
-<meta name="twitter:image:alt" content="Vaelo — aplicativo para dividir despesas em grupo com privacidade">
+<meta name="twitter:image:alt" content="Vaelo — aplicativo para dividir despesas em grupo com privacidade e IPCA">
 <meta name="theme-color" content="#16171a">
 <link rel="icon" href="/favicon.png?v=3" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
@@ -469,13 +471,42 @@ footer a:hover {
       "@type": ["SoftwareApplication", "WebApplication"],
       "@id": "https://vaelo.club/#app",
       "name": "Vaelo",
+      "alternateName": ["Vaelo App", "Vaelo Club"],
       "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "BRL"
-      },
+      "operatingSystem": "Web, Android, iOS",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Plano Gratuito",
+          "price": "0",
+          "priceCurrency": "BRL",
+          "description": "Até 5 novas despesas por dia em cada grupo, com rateio completo e correção pelo IPCA grátis para sempre."
+        },
+        {
+          "@type": "Offer",
+          "name": "Vaelo Pro Mensal",
+          "price": "7.90",
+          "priceCurrency": "BRL",
+          "url": "https://vaelo.club/pro/#pro-mensal",
+          "description": "Despesas ilimitadas em até 5 grupos para todos os membros."
+        },
+        {
+          "@type": "Offer",
+          "name": "Vaelo Pro Anual",
+          "price": "59.90",
+          "priceCurrency": "BRL",
+          "url": "https://vaelo.club/pro/#pro-anual",
+          "description": "Despesas ilimitadas em até 5 grupos para todos os membros com desconto anual."
+        },
+        {
+          "@type": "Offer",
+          "name": "Vaelo Fundador Vitalício",
+          "price": "129.00",
+          "priceCurrency": "BRL",
+          "url": "https://vaelo.club/pro/#fundador",
+          "description": "Acesso vitalício com liberação de até 10 grupos para todos os membros."
+        }
+      ],
       "url": "https://vaelo.club/",
       "installUrl": ["https://app.vaelo.club/", "https://play.google.com/store/apps/details?id=club.vaelo.android"],
       "inLanguage": "pt-BR",
@@ -485,14 +516,17 @@ footer a:hover {
       "screenshot": "https://vaelo.club/tela-1.webp",
       "featureList": [
         "Divisão de despesas em grupo para viagens, casa e amigos",
-        "Criptografia de ponta a ponta com dados guardados nos aparelhos",
+        "Correção monetária oficial pelo IPCA e INPC do IBGE para dívidas antigas",
+        "Criptografia de ponta a ponta com dados guardados nos aparelhos (E2EE)",
         "Servidor repassa apenas blocos cifrados, apagados em até 90 dias",
-        "A NexaDuo não consegue ler os lançamentos",
+        "A NexaDuo não consegue ler os lançamentos nem os valores",
         "Funciona sem internet e sincroniza quando a conexão volta",
         "Divisão em partes iguais, valores exatos, porcentagem ou cotas",
         "Mostra quem deve a quem com dívidas simplificadas",
+        "Imputação de pagamentos parciais conforme artigo 355 do Código Civil",
         "Registro de pagamentos e acertos",
         "Convite por link direto com login por código por e-mail ou Passkey",
+        "Assinatura coletiva justa: uma pessoa Pro libera o grupo todo",
         "Exclusão de despesas reversível com histórico de versões mantido",
         "Gratuito, sem anúncios e sem ferramentas de análise ou rastreamento"
       ]
@@ -514,7 +548,7 @@ footer a:hover {
           "name": "O Vaelo é gratuito?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sim, o Vaelo é gratuito hoje. O aplicativo não exibe anúncios e não utiliza nenhuma ferramenta de análise ou rastreamento."
+            "text": "Sim, o Vaelo tem plano gratuito para sempre, com até 5 novas despesas criadas por dia por grupo, todos os 4 tipos de rateio e correção pela inflação (IPCA/INPC) inclusa sem custo. O app não exibe anúncios nem usa ferramentas de rastreamento."
           }
         },
         {
@@ -522,7 +556,15 @@ footer a:hover {
           "name": "O Vaelo é uma alternativa ao Splitwise?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sim, serve para o mesmo uso: dividir despesas em grupo (como viagem, casa ou amigos). A diferença é que os dados ficam cifrados nos aparelhos das pessoas e a NexaDuo não consegue ler os lançamentos."
+            "text": "Sim, serve para o mesmo propósito de dividir contas entre amigos, mas resolve os principais problemas do Splitwise: os dados ficam cifrados de ponta a ponta nos aparelhos e o servidor não lê suas contas; inclui correção automática pela inflação brasileira (IPCA e INPC); e no plano Pro, basta uma pessoa assinar para liberar o grupo inteiro para todo mundo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Vaelo atualiza dívidas pela inflação (IPCA e INPC)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Vaelo consulta diretamente os índices oficiais do IBGE (SIDRA) para atualizar o valor de despesas antigas pelo IPCA ou INPC. Você escolhe o índice do grupo ou por despesa, e a correção é calculada de forma justa e transparente, sem cobrar nada a mais por isso."
           }
         },
         {
@@ -617,6 +659,11 @@ footer a:hover {
     </li>
     <li class="stone-row">
       <span class="stone-bullet" aria-hidden="true"></span>
+      <h2>Correção oficial por IPCA e INPC</h2>
+      <p class="stone-desc">Dívidas antigas não perdem valor: o Vaelo busca os índices oficiais do IBGE e atualiza os saldos pela inflação automaticamente, de graça.</p>
+    </li>
+    <li class="stone-row">
+      <span class="stone-bullet" aria-hidden="true"></span>
       <h2>Do jeito que vocês dividem</h2>
       <p class="stone-desc">Partes iguais, valores exatos, porcentagem ou cotas, com quem deve quanto simplificado.</p>
     </li>
@@ -636,11 +683,15 @@ footer a:hover {
       </details>
       <details class="faq-item">
         <summary class="faq-summary">O Vaelo é gratuito?</summary>
-        <p class="faq-desc">Sim, o Vaelo é gratuito hoje. O aplicativo não exibe anúncios e não utiliza nenhuma ferramenta de análise ou rastreamento.</p>
+        <p class="faq-desc">Sim, o Vaelo tem plano gratuito para sempre, com até 5 novas despesas criadas por dia por grupo, todos os 4 tipos de rateio e correção pela inflação (IPCA/INPC) inclusa sem custo. O app não exibe anúncios nem usa ferramentas de rastreamento.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-summary">O Vaelo é uma alternativa ao Splitwise?</summary>
-        <p class="faq-desc">Sim, serve para o mesmo uso: dividir despesas em grupo (como viagem, casa ou amigos). A diferença é que os dados ficam cifrados nos aparelhos das pessoas e a NexaDuo não consegue ler os lançamentos.</p>
+        <p class="faq-desc">Sim, serve para o mesmo propósito de dividir contas entre amigos, mas resolve os principais problemas do Splitwise: os dados ficam cifrados de ponta a ponta nos aparelhos e o servidor não lê suas contas; inclui correção automática pela inflação brasileira (IPCA e INPC); e no plano Pro, basta uma pessoa assinar para liberar o grupo inteiro para todo mundo.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">O Vaelo atualiza dívidas pela inflação (IPCA e INPC)?</summary>
+        <p class="faq-desc">Sim. O Vaelo consulta diretamente os índices oficiais do IBGE (SIDRA) para atualizar o valor de despesas antigas pelo IPCA ou INPC. Você escolhe o índice do grupo ou por despesa, e a correção é calculada de forma justa e transparente, sem cobrar nada a mais por isso.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-summary">Meus dados ficam salvos onde? Vocês conseguem ver minhas despesas?</summary>

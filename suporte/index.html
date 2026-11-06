@@ -6,15 +6,25 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://*.clarity.ms; connect-src https://*.clarity.ms https://c.bing.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Suporte — Vaelo</title>
-<meta name="description" content="Ajuda com conta, sincronização, despesas e acertos no Vaelo para iPhone e iPad.">
+<meta name="description" content="Ajuda com conta, sincronização, despesas, divisão e acertos no Vaelo para Web, Android e iPhone.">
+<meta name="keywords" content="suporte vaelo, ajuda vaelo, como funciona vaelo, sincronização vaelo, recuperar conta vaelo">
 <link rel="canonical" href="https://vaelo.club/suporte/">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vaelo">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://vaelo.club/suporte/">
 <meta property="og:title" content="Suporte — Vaelo">
-<meta property="og:description" content="Ajuda com conta, sincronização, despesas e acertos no Vaelo para iPhone e iPad.">
+<meta property="og:description" content="Ajuda com conta, sincronização, despesas, divisão e acertos no Vaelo para Web, Android e iPhone.">
 <meta property="og:image" content="https://vaelo.club/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Suporte Vaelo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Suporte — Vaelo">
+<meta name="twitter:description" content="Ajuda com conta, sincronização, despesas, divisão e acertos no Vaelo para Web, Android e iPhone.">
+<meta name="twitter:image" content="https://vaelo.club/og.png">
+<meta name="twitter:image:alt" content="Suporte Vaelo">
 <meta name="theme-color" content="#16171a">
 <link rel="icon" href="/favicon.png?v=3" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
@@ -190,6 +200,84 @@ footer a:hover {
   }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://vaelo.club/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Suporte",
+          "item": "https://vaelo.club/suporte/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vaelo.club/suporte/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Meus dados aparecem na versão web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, os grupos da conta sincronizam entre iOS, Android e web com criptografia de ponta a ponta. Entre com o código recebido por e-mail e use “Conectar a um aparelho com o Vaelo” para parear com a PWA na mesma conta. Só entrar com o mesmo e-mail não transfere as chaves dos grupos. Grupos criados sem conta ficam separados no aparelho."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso usar sem internet ou reinstalar o app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os dados já disponíveis no aparelho continuam acessíveis sem conexão. Login, pareamento e sincronização precisam de internet. Não apague os dados do app para corrigir uma falha: registros locais ou alterações ainda não sincronizadas podem ser perdidos. Não há backup nesta versão; procure o suporte antes de reinstalar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como excluo minha conta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abra a área de conta e toque em “Excluir conta”. O login e os dados cifrados da conta no servidor são removidos, assim como os dados desta conta neste aparelho. Membros que já sincronizaram mantêm o histórico dos grupos. Grupos criados sem conta permanecem no aparelho. Sem acesso ao app, siga a página pública de exclusão de conta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Vaelo faz pagamentos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O aplicativo registra despesas, dívidas e acertos. Faça o pagamento fora do Vaelo (como por Pix ou dinheiro) e depois registre o acerto no grupo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que não consigo criar uma nova despesa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O limite gratuito é de cinco novas despesas por dia em cada grupo. Edições, exclusões e acertos não consomem esse limite. Se precisar de despesas ilimitadas, conheça o plano Vaelo Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como relato um problema no TestFlight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use o feedback do TestFlight ou escreva ao suporte em alexandre@nexaduo.com. Compartilhe somente o necessário para reproduzir a falha e prefira dados de demonstração nas capturas."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <script src="/clarity.js" async></script>
 </head>
 <body>

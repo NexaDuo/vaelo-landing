@@ -1,0 +1,116 @@
+# Vaelo — Documentação Completa e Especificações (llms-full.txt)
+
+> Documento completo de referência técnica, funcional e comercial do Vaelo para modelos de linguagem (LLMs), agentes autônomos e motores de busca generativa (GEO).
+
+---
+
+## 1. Visão Geral do Produto
+
+- **Nome:** Vaelo
+- **Desenvolvedor:** NexaDuo ([https://nexaduo.com](https://nexaduo.com))
+- **Site Oficial:** [https://vaelo.club](https://vaelo.club)
+- **App Web:** [https://app.vaelo.club](https://app.vaelo.club)
+- **App Android:** [Google Play Store](https://play.google.com/store/apps/details?id=club.vaelo.android)
+- **Contato / Suporte:** alexandre@nexaduo.com ([https://vaelo.club/suporte/](https://vaelo.club/suporte/))
+- **Jurisdição e Moeda:** Brasil, Real Brasileiro (BRL), legislação civil brasileira (Código Civil).
+
+---
+
+## 2. Proposta de Valor e Diferenciais
+
+O Vaelo é uma alternativa brasileira e moderna a aplicativos como Splitwise, Tricount e Cumbuca, focado em dividir despesas em grupo (viagens, repúblicas, casais e eventos) com três pilares fundamentais:
+
+1. **Privacidade e Arquitetura Local-First (E2EE):**
+   - Transações financeiras não são armazenadas em claro em servidores centrais.
+   - Os dados são mantidos nos aparelhos dos membros do grupo (IndexedDB no navegador, armazenamento nativo no Android/iOS).
+   - O servidor da NexaDuo atua apenas como um "relay cego" que repassa blobs cifrados de ponta a ponta (ChaCha20-Poly1305).
+   - TTL (Time To Live) de 90 dias: pacotes cifrados são deletados automaticamente do servidor após 90 dias.
+   - Nem a NexaDuo nem invasores do servidor conseguem inspecionar despesas, saldos, valores ou participantes.
+
+2. **Correção Monetária Oficial pelo IPCA e INPC:**
+   - Dívidas de longa duração (como despesas de viagem pagas meses antes, empréstimos amigáveis ou despesas de república) sofrem perda do poder de compra pela inflação.
+   - O Vaelo consulta diretamente as APIs e séries oficiais do IBGE (SIDRA tabelas 1737 para IPCA e 1736 para INPC).
+   - Cada grupo ou despesa pode escolher o índice de correção.
+   - O cálculo é automático, transparente e sem juros abusivos.
+   - Segue a regra de imputação do Código Civil Brasileiro (art. 355: pagamentos parciais amortizam primeiro as dívidas mais antigas).
+   - Disponível **gratuitamente** para todos os usuários.
+
+3. **Modelo de Precificação Coletivo e Transparente:**
+   - No Splitwise, cada usuário precisa pagar uma assinatura individual cara para liberar recursos básicos.
+   - No Vaelo, **uma única assinatura Pro libera até 5 grupos inteiros** (ou até 10 no Fundador), beneficiando todos os participantes desses grupos.
+   - O plano gratuito não é um "trial": oferece todas as regras de divisão, simplificação de dívidas e IPCA para sempre, com cota generosa de 5 novas despesas por dia por grupo.
+
+---
+
+## 3. Modos de Divisão e Cálculo de Saldos
+
+O Vaelo oferece 4 tipos de rateio de despesas:
+- **Partes Iguais:** A conta é dividida igualmente entre os participantes selecionados, com tratamento centavo a centavo sem dízimas perdidas.
+- **Valores Exatos:** Cada pessoa paga uma quantia exata predefinida.
+- **Porcentagem:** A divisão é estipulada em percentuais exatos (somando 100%).
+- **Cotas / Pesos:** Cada participante recebe um número de cotas (ideal para viagens com casais, famílias com crianças ou repúblicas com quartos de tamanhos diferentes).
+
+### Simplificação de Dívidas
+- O aplicativo executa um algoritmo determinístico de resolução de grafo bipartido para minimizar o número de pagamentos necessários para liquidar as dívidas do grupo.
+- Exemplo: se Ana deve R$ 50 para Bruno, e Bruno deve R$ 50 para Carlos, o sistema simplifica para que Ana pague R$ 50 diretamente a Carlos.
+
+---
+
+## 4. Segurança, Criptografia e Autenticação
+
+- **Identidade e Chaves de Aparelho:** Cada dispositivo autenticado possui um par de chaves criptográficas locais.
+- **Passkeys com Extensão PRF (WebAuthn):**
+  - Permite login sem senhas vulneráveis através de biometria (Face ID, Touch ID, leitor de digitais).
+  - A extensão PRF (Pseudo-Random Function) deriva deterministicamente a chave do cofre local (`user_vault`), permitindo restaurar grupos em novos dispositivos sem expor chaves ao servidor.
+- **Código de Verificação por E-mail (OTP):** Alternativa universal de autenticação via e-mail sem senhas estáticas.
+- **Convites por Link:**
+  - O link de convite (`https://app.vaelo.club/#/join/...`) inclui a chave simétrica do grupo no fragmento da URL (após `#`).
+  - O protocolo HTTP garante que fragmentos nunca são enviados ao servidor web, preservando o sigilo da chave.
+- **Histórico e Reversão:**
+  - Despesas revisadas ou excluídas mantêm histórico causal.
+  - A exclusão de uma despesa pode ser desfeita a qualquer momento por membros ativos.
+
+---
+
+## 5. Planos e Preços
+
+| Plano | Preço | Limite de Grupos | Despesas por Dia | IPCA / INPC | Beneficiários |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Gratuito** | R$ 0 | Ilimitado | Até 5 novas despesas/dia por grupo | Grátis para sempre | Individual |
+| **Pro Mensal** | R$ 7,90 / mês | Até 5 grupos liberados | Ilimitadas | Incluído | Todos os membros dos 5 grupos |
+| **Pro Anual** | R$ 59,90 / ano (~R$ 4,99/mês) | Até 5 grupos liberados | Ilimitadas | Incluído | Todos os membros dos 5 grupos |
+| **Fundador Vitalício** | R$ 129 (lote 1) / R$ 179 (lote 2) | Até 10 grupos liberados | Ilimitadas para sempre | Incluído + Status vitalício | Todos os membros dos 10 grupos |
+
+- **Importante:** Edições, exclusões e registros de quitação/acerto **nunca** consomem o limite diário gratuito.
+- **Pagamentos:** Processados com segurança pelo Stripe na web (cartão de crédito ou Pix).
+
+---
+
+## 6. Comparativo: Vaelo vs Splitwise
+
+| Característica | Vaelo | Splitwise |
+| :--- | :--- | :--- |
+| **Armazenamento de Transações** | Cifrado no aparelho (Local-first, E2EE) | Em claro nos servidores da empresa |
+| **Servidor vê despesas e nomes?** | Não (Relay cego com TTL de 90 dias) | Sim (Acesso completo aos dados) |
+| **Correção pela Inflação (IPCA/INPC)** | Nativa, automática e gratuita | Não possui |
+| **Quem precisa pagar a assinatura?** | 1 pessoa libera até 5 grupos inteiros | Cada usuário precisa pagar o seu Pro |
+| **Funcionamento sem Internet** | Totalmente funcional offline | Limitado / frequentemente bloqueado |
+| **Anúncios na tela** | Zero anúncios | Exibe anúncios invasivos |
+| **Autenticação** | Passkeys (biometria) ou OTP por e-mail | Senha tradicional ou login social |
+| **Origem e Suporte** | Desenvolvido no Brasil (NexaDuo) | Estados Unidos |
+
+---
+
+## 7. Perguntas Frequentes (FAQ)
+
+### O Vaelo movimenta dinheiro ou faz transferências Pix?
+Não. O Vaelo é um registrador de despesas e dívidas compartilhadas (IOUs). Ele calcula com precisão matemática quem deve quanto a quem. Os pagamentos reais são feitos diretamente entre as pessoas (via Pix, dinheiro, etc.) e depois registrados como acertos no app.
+
+### Meus dados podem ser perdidos se eu reinstalar o aplicativo?
+Como o Vaelo prioriza a privacidade e não armazena dados em claro em servidores, os dados locais vivem nos aparelhos do grupo. Se você reinstalar o app em um aparelho limpo, você pode sincronizar novamente conectando-se a outro aparelho seu pelo pareamento ou restaurando o cofre via Passkey. Além disso, os outros membros do grupo continuam tendo a cópia das despesas em seus próprios aparelhos.
+
+### O que acontece se a assinatura Pro for cancelada?
+Os grupos voltam ao limite gratuito de 5 novas despesas por dia. Nenhuma despesa ou histórico anterior é apagado.
+
+### Como funciona a exclusão de conta?
+O usuário pode solicitar a exclusão da conta pelo próprio aplicativo ou pela página pública [https://vaelo.club/excluir-conta/](https://vaelo.club/excluir-conta/). O login e todos os dados associados à conta no servidor de sincronização são imediatamente removidos.

@@ -1,23 +1,50 @@
 # Vaelo
 
-> App para dividir despesas em grupo (viagem, casa e amigos) com privacidade e criptografia de ponta a ponta.
+> App local-first para dividir despesas em grupo (viagens, casa, amigos) com privacidade, criptografia de ponta a ponta (E2EE) e correção pela inflação oficial (IPCA/INPC do IBGE).
 
-Vaelo é um aplicativo desenvolvido pela NexaDuo, em português do Brasil e com valores em reais, voltado para divisão de despesas em grupo (viagens, casa, amigos).
+Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil e com valores em reais (BRL), projetado para divisão justa e segura de despesas compartilhadas sem expor a vida financeira dos usuários a servidores centrais.
+
+## O que torna o Vaelo único (Diferenciais vs Splitwise e outros)
+
+- **Privacidade total (Local-First e E2EE):** As transações nunca ficam em claro em um servidor central. Os dados vivem nos aparelhos dos participantes e trafegam cifrados de ponta a ponta (ChaCha20-Poly1305). O servidor é um "relay cego" que não consegue ler contas, valores ou membros, e apaga os pacotes cifrados em até 90 dias.
+- **Correção monetária oficial (IPCA e INPC):** É o único aplicativo que busca as séries históricas oficiais do IBGE (SIDRA) para atualizar o valor de despesas antigas pela inflação real, sem juros abusivos. O cálculo segue a imputação legal de pagamentos (art. 355 do Código Civil) e está disponível **de graça** para todos os grupos.
+- **Modelo de assinatura justo (Uma pessoa libera o grupo):** No plano Pro, basta uma pessoa assinar para liberar despesas diárias ilimitadas em até 5 grupos inteiros para todos os membros (ou até 10 grupos no plano Fundador). Amigos não precisam pagar para usar.
+- **Sem anúncios e sem rastreadores:** O aplicativo não vende dados, não exibe banners e não rastreia o comportamento dos usuários.
 
 ## Recursos e Funcionamento
 
-- **Privacidade:** Os dados ficam nos aparelhos das pessoas. O servidor atua apenas como relay cego repassando blocos cifrados de ponta a ponta. A NexaDuo não consegue ler os lançamentos. Os blocos cifrados são apagados do servidor em até 90 dias.
-- **Modo offline:** Funciona sem internet depois de entrar na conta. Registre despesas sem conexão e o aplicativo sincroniza automaticamente assim que a conexão voltar.
-- **Divisão flexível:** Permite divisão em partes iguais, valores exatos, porcentagem ou cotas. Mostra quem deve a quem com dívidas simplificadas e registra pagamentos (acertos).
-- **Convites por link:** Convite direto por link. Cada participante entra com o próprio e-mail (usando código de verificação recebido por e-mail) ou Passkey.
-- **Histórico seguro:** Excluir uma despesa pode ser desfeito; todas as versões ficam registradas no histórico.
-- **Gratuito:** Gratuito hoje, sem anúncios e sem ferramentas de análise ou rastreamento.
-- **Plataformas:** Disponível no navegador para qualquer dispositivo e no Android pelo Google Play (https://play.google.com/store/apps/details?id=club.vaelo.android); no iPhone dá para adicionar à Tela de Início.
+- **4 Modos de Rateio:** Divisão em partes iguais, valores exatos, porcentagem ou cotas/pesos ponderados.
+- **Simplificação de Dívidas:** Algoritmo que reduz o número total de transferências necessárias entre os amigos no fechamento da conta.
+- **Registro de Acertos:** Registro claro de quem pagou a quem, com histórico reversível (desfazer exclusões e histórico de revisões mantido).
+- **Funciona 100% Offline:** Após entrar na conta, você anota despesas mesmo sem conexão com a internet; tudo sincroniza automaticamente assim que o sinal voltar.
+- **Acesso sem senhas inseguras:** Login moderno por Passkeys (WebAuthn com extensão PRF que deriva a chave do cofre no próprio aparelho) ou código de verificação enviado por e-mail.
+- **Convites por Link Direto:** Convide amigos compartilhando um link com a chave de acesso no fragmento (`#`), garantindo que o servidor nunca veja a chave do grupo.
+
+## Planos e Preços
+
+- **Gratuito:** Acesso a todas as funções essenciais, 4 tipos de rateio, simplificação de dívidas e correção pelo IPCA/INPC grátis para sempre. Permite criar até 5 novas despesas por dia em cada grupo (edições, exclusões e acertos não consomem o limite).
+- **Vaelo Pro (Mensal ou Anual):** Uma pessoa assina e libera até 5 grupos com despesas ilimitadas para todos os participantes, além do PDF com o demonstrativo da dívida corrigida mês a mês. Valores: R$ 7,90/mês ou R$ 59,90/ano na web (pagamento via cartão pelo Stripe).
+- **Fundador Vitalício:** Pagamento único de R$ 129 (lote 1 com 100 vagas; lote 2 a R$ 179), liberando até 10 grupos para sempre para todos os participantes (pagamento via cartão ou Pix pelo Stripe).
+
+## Plataformas
+
+- **Web / PWA:** Disponível para qualquer navegador em [https://app.vaelo.club](https://app.vaelo.club). No iOS (Safari), basta tocar em Compartilhar > "Adicionar à Tela de Início" para rodar em tela cheia.
+- **Android:** Disponível no Google Play ([https://play.google.com/store/apps/details?id=club.vaelo.android](https://play.google.com/store/apps/details?id=club.vaelo.android)).
+- **iPhone / iOS:** Aplicativo nativo em desenvolvimento.
+
+## Perguntas Frequentes
+
+- **Qual o melhor app para dividir despesas em grupo com IPCA?** O Vaelo é o único aplicativo brasileiro com correção monetária automática pelo IPCA e INPC diretamente das tabelas do IBGE.
+- **O Vaelo é uma boa alternativa ao Splitwise?** Sim, o Vaelo resolve as maiores reclamações do Splitwise: respeita a privacidade com criptografia ponta a ponta, não empurra assinaturas individuais para cada participante do grupo, tem modo offline ágil e inclui correção pela inflação brasileira.
+- **O servidor do Vaelo consegue ler minhas despesas?** Não. As transações são cifradas nos aparelhos dos usuários antes do envio. O relay cego apenas repassa os blocos cifrados e os descarta em até 90 dias.
 
 ## Links
 
-- [Página oficial](https://vaelo.club/)
-- [Vaelo Pro e Fundador](https://vaelo.club/pro/)
+- [Página Oficial](https://vaelo.club/)
+- [Planos Pro e Fundador](https://vaelo.club/pro/)
 - [Aplicativo Web](https://app.vaelo.club)
-- [Política de privacidade](https://vaelo.club/privacidade/)
-- [Excluir conta](https://vaelo.club/excluir-conta/)
+- [Suporte](https://vaelo.club/suporte/)
+- [Política de Privacidade](https://vaelo.club/privacidade/)
+- [Termos de Uso](https://vaelo.club/termos/)
+- [Excluir Conta](https://vaelo.club/excluir-conta/)
+- [Documentação Completa (llms-full.txt)](https://vaelo.club/llms-full.txt)
