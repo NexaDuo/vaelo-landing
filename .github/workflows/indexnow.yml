@@ -1,0 +1,38 @@
+name: IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "README.md"
+      - ".gitignore"
+  workflow_dispatch:
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  indexnow:
+    name: Submit URLs to IndexNow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Wait for GitHub Pages deployment
+        run: |
+          echo "Aguardando 45s para o deploy do GitHub Pages estabilizar..."
+          sleep 45
+
+      - name: Submit to IndexNow
+        env:
+          INDEXNOW_API_KEY: ${{ secrets.INDEXNOW_API_KEY }}
+        run: |
+          python3 submit-indexnow.py

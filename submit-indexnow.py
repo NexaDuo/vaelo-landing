@@ -108,8 +108,11 @@ def main() -> None:
     print()
 
     # Submete tanto no hub central do IndexNow quanto direto no Bing
-    submit(key, key_file.name, urls, "https://api.indexnow.org/indexnow")
-    submit(key, key_file.name, urls, "https://www.bing.com/indexnow")
+    res1 = submit(key, key_file.name, urls, "https://api.indexnow.org/indexnow")
+    res2 = submit(key, key_file.name, urls, "https://www.bing.com/indexnow")
+
+    if res1 not in (200, 202) and res2 not in (200, 202):
+        sys.exit("Falha ao submeter URLs no IndexNow em ambos os endpoints.")
 
 
 if __name__ == "__main__":
