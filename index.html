@@ -65,6 +65,8 @@
   font-synthesis: none;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   accent-color: var(--ink);
 }
 
@@ -121,8 +123,36 @@ a { color: inherit; text-underline-offset: .2em; }
 .topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   min-height: 48px;
   margin-bottom: 1.5rem;
+}
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: .35rem .85rem;
+  border-radius: 999px;
+  border: var(--rule) solid rgba(255, 255, 255, .22);
+  color: var(--on-band);
+  font-size: .925rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color .15s, border-color .15s, color .15s;
+}
+.topbar-link:hover {
+  background: rgba(255, 255, 255, .1);
+  border-color: var(--on-band);
+}
+.topbar-link:focus-visible {
+  outline: 3px solid var(--focus-on-band);
+  outline-offset: 3px;
 }
 .brand {
   display: inline-flex;
@@ -206,6 +236,15 @@ h1 {
 .button.secondary-band:hover {
   background: rgba(255, 255, 255, .08);
   border-color: var(--on-band);
+}
+.button.secondary {
+  background: transparent;
+  color: var(--ink);
+  border: var(--rule) solid var(--line-strong);
+}
+.button.secondary:hover {
+  background: var(--wash);
+  border-color: var(--ink);
 }
 
 /* Aviso "em breve nas lojas" no hero */
@@ -322,6 +361,98 @@ main {
   max-width: 62ch;
 }
 
+/* Destaque Vaelo Pro */
+.pro-spotlight {
+  margin: 3rem 0;
+  background: var(--surface);
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.pro-spotlight-inner {
+  padding: 2rem 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2.25rem;
+  align-items: center;
+}
+.pro-spotlight-copy h2 {
+  margin: 0 0 .6rem;
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.pro-spotlight-desc {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: .975rem;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+.pro-spotlight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+.pro-spotlight-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: .75rem;
+  align-items: baseline;
+  font-size: .95rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.pro-spotlight-list .stone-bullet {
+  transform: translateY(-1px);
+}
+.pro-spotlight-card {
+  background: var(--ground);
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+.pro-price-tag {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.pro-price-caption {
+  font-size: .8rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+.pro-price-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.pro-price-freq {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.pro-price-detail {
+  font-size: .8rem;
+  color: var(--muted);
+  line-height: 1.35;
+  margin-top: .15rem;
+}
+.pro-cta {
+  width: 100%;
+}
+
 /* Perguntas Frequentes */
 .faq-section {
   margin: 2.5rem 0;
@@ -435,6 +566,17 @@ footer a:hover {
   }
   .button {
     width: 100%;
+  }
+  .pro-spotlight {
+    margin: 2.25rem 0;
+  }
+  .pro-spotlight-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.35rem 1.15rem;
+  }
+  .pro-spotlight-card {
+    padding: 1.15rem 1rem;
   }
 }
 
@@ -553,6 +695,14 @@ footer a:hover {
         },
         {
           "@type": "Question",
+          "name": "Como funciona o plano Vaelo Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O plano gratuito tem todos os recursos do app — rateios, simplificação e correção pela inflação — com até 5 novas despesas por dia por grupo. Com o Vaelo Pro, basta uma pessoa assinar para liberar despesas diárias ilimitadas em até 5 grupos para todos os amigos que participam deles, sem que mais ninguém do grupo precise pagar."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "O Vaelo é uma alternativa ao Splitwise?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -622,6 +772,9 @@ footer a:hover {
         <img src="/icon-192.png" width="34" height="34" alt="" class="brand-icon">
         <span>Vaelo</span>
       </a>
+      <nav class="topbar-nav" aria-label="Navegação secundária">
+        <a href="/pro/" class="topbar-link">Vaelo Pro</a>
+      </nav>
     </div>
     <div class="hero">
       <div class="hero-copy">
@@ -635,7 +788,7 @@ footer a:hover {
       </div>
       <div class="phone-mockup">
         <div class="phone-frame">
-          <img src="/tela-1.webp" width="540" height="1080" alt="Tela do aplicativo Vaelo mostrando saldo de viagem, divisão de despesas e atalhos em calçadão" class="phone-screen">
+          <img src="/tela-1.webp" width="540" height="1080" alt="Tela do aplicativo Vaelo mostrando saldo de viagem, divisão de despesas e atalhos em calçadão" class="phone-screen" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -674,6 +827,37 @@ footer a:hover {
     </li>
   </ul>
 
+  <section class="pro-spotlight" aria-labelledby="pro-title">
+    <div class="pro-spotlight-inner">
+      <div class="pro-spotlight-copy">
+        <h2 id="pro-title">Vaelo Pro: uma assinatura para o grupo inteiro</h2>
+        <p class="pro-spotlight-desc">O plano gratuito inclui todos os tipos de rateio e correção pela inflação para sempre. No Pro, basta uma pessoa assinar para liberar despesas diárias ilimitadas em até 5 grupos para todos os participantes.</p>
+        <ul class="pro-spotlight-list">
+          <li>
+            <span class="stone-bullet" aria-hidden="true"></span>
+            <span><strong>Liberdade coletiva:</strong> quem assina libera o grupo; ninguém mais precisa pagar</span>
+          </li>
+          <li>
+            <span class="stone-bullet" aria-hidden="true"></span>
+            <span><strong>Sem teto diário:</strong> registre quantas despesas quiser em viagens e na casa</span>
+          </li>
+          <li>
+            <span class="stone-bullet" aria-hidden="true"></span>
+            <span><strong>Demonstrativo em PDF:</strong> histórico e cálculo oficial para prestar contas</span>
+          </li>
+        </ul>
+      </div>
+      <div class="pro-spotlight-card">
+        <div class="pro-price-tag">
+          <span class="pro-price-caption">Planos a partir de</span>
+          <span class="pro-price-value">R$ 7,90<span class="pro-price-freq">/mês</span></span>
+          <span class="pro-price-detail">Opção anual com ~37% de desconto ou Fundador vitalício</span>
+        </div>
+        <a class="button secondary pro-cta" href="/pro/">Conhecer os planos Pro</a>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-section" aria-labelledby="faq-title">
     <h2 id="faq-title">Perguntas frequentes</h2>
     <div class="faq-list">
@@ -684,6 +868,10 @@ footer a:hover {
       <details class="faq-item">
         <summary class="faq-summary">O Vaelo é gratuito?</summary>
         <p class="faq-desc">Sim, o Vaelo tem plano gratuito para sempre, com até 5 novas despesas criadas por dia por grupo, todos os 4 tipos de rateio e correção pela inflação (IPCA/INPC) inclusa sem custo. O app não exibe anúncios nem usa ferramentas de rastreamento.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Como funciona o plano Vaelo Pro?</summary>
+        <p class="faq-desc">O plano gratuito tem todos os recursos do app — rateios, simplificação e correção pela inflação — com até 5 novas despesas por dia por grupo. Com o Vaelo Pro, basta uma pessoa assinar para liberar despesas diárias ilimitadas em até 5 grupos para todos os amigos que participam deles, sem que mais ninguém do grupo precise pagar. Saiba mais nos <a href="/pro/">planos do Vaelo Pro</a>.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-summary">O Vaelo é uma alternativa ao Splitwise?</summary>
@@ -722,7 +910,7 @@ footer a:hover {
   </section>
 
   <footer>
-    Vaelo é um produto <a href="https://nexaduo.com">NexaDuo</a> · <a href="/pro/">Pro</a> · <a href="/suporte/">Suporte</a> · <a href="/privacidade/">Privacidade</a> · <a href="/termos/">Termos</a> · <a href="/excluir-conta/">Excluir conta</a> · Contato: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>
+    Vaelo é um produto <a href="https://nexaduo.com">NexaDuo</a> · <a href="/pro/">Vaelo Pro</a> · <a href="/suporte/">Suporte</a> · <a href="/privacidade/">Privacidade</a> · <a href="/termos/">Termos</a> · <a href="/excluir-conta/">Excluir conta</a> · Contato: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>
   </footer>
 </main>
 </body>
