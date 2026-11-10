@@ -1,5 +1,5 @@
-// www.vaelo.club and the missing trailing slash answer with permanent
-// redirects, like GitHub Pages did: search engines read 307 as temporary.
+// www.vaelo.club and the trailing slash answer with permanent redirects to
+// the canonical URL: search engines read the assets 307 as temporary.
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);

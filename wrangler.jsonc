@@ -11,7 +11,7 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    "html_handling": "auto-trailing-slash",
+    "html_handling": "drop-trailing-slash",
     "not_found_handling": "none",
     // The worker runs first only to send www to the apex.
     "run_worker_first": true

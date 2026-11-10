@@ -41,10 +41,10 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil
 ## Links
 
 - [Página Oficial](https://vaelo.club/)
-- [Planos Pro e Fundador](https://vaelo.club/pro/)
+- [Planos Pro e Fundador](https://vaelo.club/pro)
 - [Aplicativo Web](https://app.vaelo.club)
-- [Suporte](https://vaelo.club/suporte/)
-- [Política de Privacidade](https://vaelo.club/privacidade/)
-- [Termos de Uso](https://vaelo.club/termos/)
-- [Excluir Conta](https://vaelo.club/excluir-conta/)
+- [Suporte](https://vaelo.club/suporte)
+- [Política de Privacidade](https://vaelo.club/privacidade)
+- [Termos de Uso](https://vaelo.club/termos)
+- [Excluir Conta](https://vaelo.club/excluir-conta)
 - [Documentação Completa (llms-full.txt)](https://vaelo.club/llms-full.txt)
