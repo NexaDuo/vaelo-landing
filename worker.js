@@ -5,6 +5,8 @@ export default {
     const url = new URL(request.url);
     if (url.hostname === 'www.vaelo.club') {
       url.hostname = 'vaelo.club';
+      // One hop: the pages are directories, so the slash always goes.
+      if (url.pathname.length > 1) url.pathname = url.pathname.replace(/\/+$/, '');
       return Response.redirect(url.toString(), 301);
     }
     const response = await env.ASSETS.fetch(request);
