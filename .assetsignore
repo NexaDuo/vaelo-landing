@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.assetsignore
+.nojekyll
+CNAME
+README.md
+wrangler.jsonc
+worker.js
+submit-indexnow.py
+node_modules
+.wrangler
