@@ -1,10 +1,11 @@
-// www.vaelo.club and the trailing slash answer with permanent redirects to
+// http, www.vaelo.club and the trailing slash answer with permanent redirects to
 // the canonical URL: search engines read the assets 307 as temporary.
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (url.hostname === 'www.vaelo.club') {
+    if (url.hostname === 'www.vaelo.club' || (url.protocol === 'http:' && url.hostname === 'vaelo.club')) {
       url.hostname = 'vaelo.club';
+      url.protocol = 'https:';
       // One hop: the pages are directories, so the slash always goes.
       if (url.pathname.length > 1) url.pathname = url.pathname.replace(/\/+$/, '');
       return Response.redirect(url.toString(), 301);

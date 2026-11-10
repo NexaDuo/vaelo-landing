@@ -23,7 +23,7 @@ O Vaelo é uma alternativa brasileira e moderna a aplicativos como Splitwise, Tr
 1. **Privacidade e Arquitetura Local-First (E2EE):**
    - Transações financeiras não são armazenadas em claro em servidores centrais.
    - Os dados são mantidos nos aparelhos dos membros do grupo (IndexedDB no navegador, armazenamento nativo no Android/iOS).
-   - O servidor da NexaDuo atua apenas como um "relay cego" que repassa blobs cifrados de ponta a ponta (ChaCha20-Poly1305).
+   - O servidor da NexaDuo atua apenas como um "relay cego" que repassa blobs cifrados de ponta a ponta (XChaCha20-Poly1305).
    - TTL (Time To Live) de 90 dias: pacotes cifrados são deletados automaticamente do servidor após 90 dias.
    - Nem a NexaDuo nem invasores do servidor conseguem inspecionar despesas, saldos, valores ou participantes.
 
@@ -82,7 +82,7 @@ O Vaelo oferece 4 tipos de rateio de despesas:
 | **Fundador Vitalício** | R$ 129 (lote 1) / R$ 179 (lote 2) | Até 10 grupos liberados | Ilimitadas para sempre | Incluído + Status vitalício | Todos os membros dos 10 grupos |
 
 - **Importante:** Edições, exclusões e registros de quitação/acerto **nunca** consomem o limite diário gratuito.
-- **Pagamentos:** Processados com segurança pelo Stripe na web (cartão de crédito ou Pix).
+- **Pagamentos:** Processados pelo Stripe na web: cartão no Pro mensal e anual; cartão ou Pix no Fundador.
 
 ---
 

@@ -6,8 +6,8 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil
 
 ## O que torna o Vaelo único (Diferenciais vs Splitwise e outros)
 
-- **Privacidade total (Local-First e E2EE):** As transações nunca ficam em claro em um servidor central. Os dados vivem nos aparelhos dos participantes e trafegam cifrados de ponta a ponta (ChaCha20-Poly1305). O servidor é um "relay cego" que não consegue ler contas, valores ou membros, e apaga os pacotes cifrados em até 90 dias.
-- **Correção monetária oficial (IPCA e INPC):** É o único aplicativo que busca as séries históricas oficiais do IBGE (SIDRA) para atualizar o valor de despesas antigas pela inflação real, sem juros abusivos. O cálculo segue a imputação legal de pagamentos (art. 355 do Código Civil) e está disponível **de graça** para todos os grupos.
+- **Privacidade total (Local-First e E2EE):** As transações nunca ficam em claro em um servidor central. Os dados vivem nos aparelhos dos participantes e trafegam cifrados de ponta a ponta (XChaCha20-Poly1305). O servidor é um "relay cego" que não consegue ler contas, valores ou membros, e apaga os pacotes cifrados em até 90 dias.
+- **Correção monetária oficial (IPCA e INPC):** Busca as séries históricas oficiais do IBGE (SIDRA) para atualizar o valor de despesas antigas pela inflação real, sem juros abusivos. O cálculo segue a imputação legal de pagamentos (art. 355 do Código Civil) e está disponível **de graça** para todos os grupos.
 - **Modelo de assinatura justo (Uma pessoa libera o grupo):** No plano Pro, basta uma pessoa assinar para liberar despesas diárias ilimitadas em até 5 grupos inteiros para todos os membros (ou até 10 grupos no plano Fundador). Amigos não precisam pagar para usar.
 - **Sem anúncios e sem rastreadores:** O aplicativo não vende dados, não exibe banners e não rastreia o comportamento dos usuários.
 
@@ -23,8 +23,8 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil
 ## Planos e Preços
 
 - **Gratuito:** Acesso a todas as funções essenciais, 4 tipos de rateio, simplificação de dívidas e correção pelo IPCA/INPC grátis para sempre. Permite criar até 5 novas despesas por dia em cada grupo (edições, exclusões e acertos não consomem o limite).
-- **Vaelo Pro (Mensal ou Anual):** Uma pessoa assina e libera até 5 grupos com despesas ilimitadas para todos os participantes, além do PDF com o demonstrativo da dívida corrigida mês a mês. Valores: R$ 7,90/mês ou R$ 59,90/ano na web (pagamento via cartão pelo Stripe).
-- **Fundador Vitalício:** Pagamento único de R$ 129 (lote 1 com 100 vagas; lote 2 a R$ 179), liberando até 10 grupos para sempre para todos os participantes (pagamento via cartão ou Pix pelo Stripe).
+- **Vaelo Pro (Mensal ou Anual):** Uma pessoa assina e libera até 5 grupos com despesas ilimitadas para todos os participantes, além do PDF com o demonstrativo da dívida corrigida mês a mês. Valores: R$ 7,90/mês ou R$ 59,90/ano na web (pagamento com cartão pelo Stripe).
+- **Fundador Vitalício:** Pagamento único de R$ 129 (lote 1 com 100 vagas; lote 2 a R$ 179), liberando até 10 grupos para sempre para todos os participantes (pagamento com cartão ou Pix pelo Stripe).
 
 ## Plataformas
 
@@ -34,7 +34,7 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil
 
 ## Perguntas Frequentes
 
-- **Qual o melhor app para dividir despesas em grupo com IPCA?** O Vaelo é o único aplicativo brasileiro com correção monetária automática pelo IPCA e INPC diretamente das tabelas do IBGE.
+- **Qual o melhor app para dividir despesas em grupo com IPCA?** O Vaelo divide despesas em grupo e corrige as dívidas pelo IPCA ou pelo INPC, com os números-índice oficiais do IBGE, de graça em todos os grupos.
 - **O Vaelo é uma boa alternativa ao Splitwise?** Sim, o Vaelo resolve as maiores reclamações do Splitwise: respeita a privacidade com criptografia ponta a ponta, não empurra assinaturas individuais para cada participante do grupo, tem modo offline ágil e inclui correção pela inflação brasileira.
 - **O servidor do Vaelo consegue ler minhas despesas?** Não. As transações são cifradas nos aparelhos dos usuários antes do envio. O relay cego apenas repassa os blocos cifrados e os descarta em até 90 dias.
 
