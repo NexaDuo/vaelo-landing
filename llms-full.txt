@@ -79,7 +79,7 @@ O Vaelo oferece 4 tipos de rateio de despesas:
 | **Gratuito** | R$ 0 | Ilimitado | Até 5 novas despesas/dia por grupo | Grátis para sempre | Individual |
 | **Pro Mensal** | R$ 7,90 / mês | Até 5 grupos liberados | Ilimitadas | Incluído | Todos os membros dos 5 grupos |
 | **Pro Anual** | R$ 59,90 / ano (~R$ 4,99/mês) | Até 5 grupos liberados | Ilimitadas | Incluído | Todos os membros dos 5 grupos |
-| **Fundador Vitalício** | R$ 129 (lote 1) / R$ 179 (lote 2) | Até 10 grupos liberados | Ilimitadas para sempre | Incluído + Status vitalício | Todos os membros dos 10 grupos |
+| **Fundador Vitalício** | R$ 129 (apenas 100 vagas) | Até 10 grupos liberados | Ilimitadas para sempre | Incluído + Status vitalício | Todos os membros dos 10 grupos |
 
 - **Importante:** Edições, exclusões e registros de quitação/acerto **nunca** consomem o limite diário gratuito.
 - **Pagamentos:** Processados pelo Stripe na web: cartão no Pro mensal e anual; cartão ou Pix no Fundador.

@@ -1,4 +1,4 @@
-// Atualiza o contador do lote 1 e a lista de Fundadores a partir da função
+// Atualiza o contador das vagas de Fundador e a lista de Fundadores a partir da função
 // founder-board. Se a busca falhar, ficam os valores escritos no HTML.
 (function () {
   var URL = "https://ysbbyknhnusivprotutt.supabase.co/functions/v1/founder-board";
@@ -15,7 +15,17 @@
       var sold = Math.max(0, Math.min(d.sold, d.total));
       left.textContent = String(d.total - sold);
       fill.style.width = Math.round((sold / d.total) * 100) + "%";
-      bar.setAttribute("aria-label", sold + " de " + d.total + " vagas do lote 1 preenchidas");
+      bar.setAttribute("aria-label", sold + " de " + d.total + " vagas de Fundador preenchidas");
+      if (sold >= d.total) {
+        var buy = document.getElementById("buy-founder");
+        if (buy) {
+          buy.textContent = "Vagas esgotadas";
+          buy.removeAttribute("href");
+          buy.setAttribute("aria-disabled", "true");
+          buy.style.opacity = ".55";
+          buy.style.pointerEvents = "none";
+        }
+      }
       if (list && section && Array.isArray(d.names) && d.names.length) {
         d.names.slice(0, 100).forEach(function (n) {
           if (typeof n !== "string") return;

@@ -24,7 +24,7 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil
 
 - **Gratuito:** Acesso a todas as funções essenciais, 4 tipos de rateio, simplificação de dívidas e correção pelo IPCA/INPC grátis para sempre. Permite criar até 5 novas despesas por dia em cada grupo (edições, exclusões e acertos não consomem o limite).
 - **Vaelo Pro (Mensal ou Anual):** Uma pessoa assina e libera até 5 grupos com despesas ilimitadas para todos os participantes, além do PDF com o demonstrativo da dívida corrigida mês a mês. Valores: R$ 7,90/mês ou R$ 59,90/ano na web (pagamento com cartão pelo Stripe).
-- **Fundador Vitalício:** Pagamento único de R$ 129 (lote 1 com 100 vagas; lote 2 a R$ 179), liberando até 10 grupos para sempre para todos os participantes (pagamento com cartão ou Pix pelo Stripe).
+- **Fundador Vitalício:** Pagamento único de R$ 129, limitado a 100 vagas (sem lote seguinte), liberando até 10 grupos para sempre para todos os participantes (pagamento com cartão ou Pix pelo Stripe).
 
 ## Plataformas
 
