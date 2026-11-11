@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://js.stripe.com https://*.clarity.ms; frame-src https://js.stripe.com; connect-src https://*.clarity.ms https://c.bing.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://js.stripe.com https://*.clarity.ms; frame-src https://js.stripe.com; connect-src https://*.clarity.ms https://c.bing.com https://ysbbyknhnusivprotutt.supabase.co; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Fundadores do Vaelo</title>
 <meta name="description" content="Um convite pessoal para os 100 primeiros Fundadores do Vaelo: pagamento único, até 10 grupos com despesas ilimitadas para todos.">
@@ -49,6 +49,8 @@
   --band: #16171a;
   --on-band: #f4f4f1;
   --on-band-muted: #b8b8b2;
+  --band-line: rgba(244, 244, 241, .15);
+  --band-line-strong: rgba(244, 244, 241, .26);
   --amber: #f5a524;
   --amber-press: #df9214;
   --on-amber: #16171a;
@@ -63,8 +65,10 @@
   color: var(--ink);
   background: var(--ground);
   font-synthesis: none;
-  line-height: 1.6;
+  line-height: 1.55;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   accent-color: var(--ink);
 }
 
@@ -80,6 +84,8 @@
     --band: #2b2d33;
     --on-band: #ecebe6;
     --on-band-muted: #a9a9a3;
+    --band-line: rgba(236, 235, 230, .14);
+    --band-line-strong: rgba(236, 235, 230, .26);
     --wash: #25262b;
     --focus: #f5a524;
     --focus-on-band: #f5a524;
@@ -91,23 +97,28 @@ body { margin: 0; background: var(--ground); color: var(--ink); }
 ::selection { background: var(--amber); color: var(--on-amber); }
 a { color: inherit; text-underline-offset: .2em; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-.band :focus-visible { outline-color: var(--focus-on-band); }
+.band :focus-visible, .plan.single :focus-visible { outline-color: var(--focus-on-band); }
 
-/* Faixa Basalto curta */
+/* Faixa Basalto — Abertura */
 .band {
   background: var(--band);
   color: var(--on-band);
   position: relative;
-  margin-bottom: 28px;
-  padding-bottom: 8px;
+  margin-bottom: 44px;
+  padding-bottom: 20px;
 }
 .band-inner {
-  max-width: 960px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: .75rem 16px 1.25rem;
+  padding: 1.25rem 16px 2.25rem;
+}
+.topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   min-height: 48px;
+  margin-bottom: 2rem;
 }
 .brand {
   display: inline-flex;
@@ -125,6 +136,42 @@ a { color: inherit; text-underline-offset: .2em; }
   border-radius: 8px;
   display: block;
 }
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .45rem 1rem;
+  border-radius: 999px;
+  border: var(--rule) solid var(--band-line-strong);
+  color: var(--on-band);
+  font-size: .925rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color .15s, border-color .15s;
+}
+.topbar-link:hover {
+  background: rgba(244, 244, 241, .09);
+  border-color: var(--on-band);
+}
+.band-hero {
+  max-width: 640px;
+}
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -.032em;
+  margin: 0 0 .65rem;
+  font-weight: 800;
+  color: var(--on-band);
+  text-wrap: balance;
+}
+.band-hero .muted {
+  font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+  line-height: 1.4;
+  color: var(--on-band-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
 .wave {
   position: absolute;
   left: 0;
@@ -137,40 +184,25 @@ a { color: inherit; text-underline-offset: .2em; }
 }
 
 main {
-  max-width: 960px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: .5rem 16px 3rem;
+  padding: .5rem 16px 3.5rem;
 }
-h1 {
-  font-size: clamp(1.75rem, 5vw, 2.35rem);
-  line-height: 1.2;
+h2 {
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  line-height: 1.18;
   letter-spacing: -.025em;
-  margin: 0 0 8px;
+  margin: 0 0 .85rem;
   font-weight: 750;
   color: var(--ink);
   text-wrap: balance;
-  overflow-wrap: anywhere;
-}
-h2 {
-  font-size: 1.2rem;
-  line-height: 1.3;
-  letter-spacing: -.015em;
-  margin: 2rem 0 .5rem;
-  font-weight: 700;
-  color: var(--ink);
 }
 p, li {
   color: var(--ink);
 }
 p {
   margin: .5rem 0 1rem;
-}
-ul {
-  margin: .5rem 0 1.25rem;
-  padding-left: 1.4rem;
-}
-li {
-  margin-bottom: .4rem;
+  max-width: 65ch;
 }
 .muted {
   color: var(--muted);
@@ -179,18 +211,220 @@ main p a, main li a {
   font-weight: 600;
 }
 
+/* Grade Editorial de Duas Colunas */
+.letter-section,
+.benefit-section,
+.faq-section,
+#founders-section {
+  display: grid;
+  grid-template-columns: minmax(230px, 280px) 1fr;
+  gap: 2.75rem;
+  align-items: start;
+}
+
+/* Carta Pessoal */
+.letter-section {
+  margin: 0 0 3rem;
+}
+.letter-body p {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin: 0 0 1.1rem;
+}
+.letter-body p:last-of-type {
+  margin: 1.35rem 0 0;
+  padding-top: 1.15rem;
+  border-top: var(--rule) solid var(--line);
+  font-size: 1.15rem;
+  font-weight: 650;
+  line-height: 1.45;
+  letter-spacing: -.01em;
+}
+
+/* Âncora Coletiva — Calçadão de Pedras */
+.benefit-section {
+  border-top: 2px solid var(--line-strong);
+  padding-top: 2.5rem;
+  margin: 0 0 3rem;
+}
+.benefit-lead h2 {
+  margin-bottom: .75rem;
+}
+.benefit-lead p {
+  color: var(--muted);
+  font-size: .975rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.benefit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.benefit-list li {
+  display: grid;
+  grid-template-columns: 6px 1fr;
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 1.05rem 0;
+  margin: 0;
+  border-bottom: var(--rule) solid var(--line);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.benefit-list li:first-child {
+  padding-top: .15rem;
+}
+.benefit-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* Pico de Decisão — Antes de pagar + Passe Fundador */
+.checkout-section {
+  border-top: 2px solid var(--line-strong);
+  padding-top: 2.5rem;
+  margin: 0 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(330px, 410px);
+  gap: 2.75rem;
+  align-items: center;
+}
+.checkout-steps h2 {
+  margin: 0 0 1.1rem;
+}
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+  border-top: var(--rule) solid var(--line);
+}
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: .95rem;
+  align-items: start;
+  padding: 1.05rem 0;
+  margin: 0;
+  border-bottom: var(--rule) solid var(--line);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.steps li::before {
+  content: counter(step);
+  width: 28px;
+  height: 28px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: var(--wash);
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bloco Basalto do Fundador */
+.plan.single {
+  background: var(--band);
+  color: var(--on-band);
+  border: var(--rule) solid var(--band);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem 1.65rem;
+  max-width: none;
+  scroll-margin-top: 1rem;
+}
+@media (prefers-color-scheme: dark) {
+  .plan.single {
+    border-color: var(--line);
+  }
+}
+.plan.single h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--on-band-muted);
+}
+.plan-figure {
+  margin: .25rem 0 1.25rem;
+  font-size: clamp(2.6rem, 7vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.035em;
+  font-variant-numeric: tabular-nums;
+  color: var(--on-band);
+}
+.plan-figure .currency {
+  font-size: .62em;
+  font-weight: 600;
+  letter-spacing: .01em;
+  vertical-align: .32em;
+  margin-right: .1em;
+  color: var(--on-band-muted);
+}
+.plan-figure-note {
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--on-band-muted);
+  margin-left: .35rem;
+}
+
+.lot {
+  margin: 0 0 1.35rem;
+  padding: 1rem 0;
+  border-top: var(--rule) solid var(--band-line);
+  border-bottom: var(--rule) solid var(--band-line);
+}
+.lot-label {
+  font-size: .925rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  color: var(--on-band);
+  margin: 0 0 8px;
+}
+.lot-bar {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--band-line);
+  border: var(--rule) solid var(--band-line-strong);
+  overflow: hidden;
+}
+.lot-fill {
+  height: 100%;
+  background: var(--on-band);
+  transition: width .4s var(--ease);
+}
+.lot-next {
+  font-size: .85rem;
+  color: var(--on-band-muted);
+  margin: 8px 0 0;
+  line-height: 1.4;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: .75rem 1.35rem;
+  min-height: 52px;
+  width: 100%;
+  padding: .85rem 1.35rem;
   border-radius: var(--radius);
-  font-size: 1rem;
-  font-weight: 650;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color .15s, transform .15s var(--ease);
+  transition: background-color .15s, border-color .15s, transform .15s var(--ease);
 }
 .button:active {
   transform: scale(.98);
@@ -204,65 +438,24 @@ main p a, main li a {
   background: var(--amber-press);
   border-color: var(--amber-press);
 }
-
-.plans {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-.plan {
-  background: var(--surface);
-  border: var(--rule) solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem;
-  scroll-margin-top: 1rem;
-}
-.plan h3 {
-  margin: .5rem 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-.badge {
-  display: inline-block;
-  background: var(--amber);
-  color: var(--on-amber);
-  padding: .25rem .65rem;
-  border-radius: 999px;
-  font-size: .8rem;
-  font-weight: 650;
-}
 .payment-note {
   font-size: .85rem;
-  color: var(--muted);
-  margin-top: .75rem;
-}
-/* Stripe's card is a fixed ~288px iframe that already shows the price: it opens the card, and stack the plans before it no longer fits. */
-.plan stripe-buy-button {
-  display: block;
-  margin-bottom: .75rem;
-}
-@media (min-width: 980px) {
-  .plan stripe-buy-button { margin-inline: -1rem; }
-}
-@media (max-width: 979px) {
-  .plans { grid-template-columns: 1fr; }
+  color: var(--on-band-muted);
+  margin: .75rem 0 0;
+  text-align: center;
 }
 
 /* Perguntas Frequentes */
 .faq-section {
-  margin: 2.5rem 0;
+  border-top: 2px solid var(--line-strong);
+  padding-top: 2.5rem;
+  margin: 0 0 3rem;
 }
-.faq-section h2 {
-  margin: 0 0 .75rem;
-  font-size: 1.25rem;
-  font-weight: 750;
-  letter-spacing: -.02em;
-  color: var(--ink);
+.faq-lead h2 {
+  margin: 0;
 }
 .faq-list {
-  border-top: var(--rule) solid var(--line);
+  border-top: 0;
 }
 .faq-item {
   border-bottom: var(--rule) solid var(--line);
@@ -272,13 +465,17 @@ main p a, main li a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 48px;
-  padding: .85rem 0;
+  min-height: 52px;
+  padding: .95rem 0;
   font-size: 1.05rem;
   font-weight: 650;
   color: var(--ink);
   cursor: pointer;
   list-style: none;
+}
+.faq-item:first-child .faq-summary {
+  padding-top: .15rem;
+  min-height: 44px;
 }
 .faq-summary::-webkit-details-marker {
   display: none;
@@ -290,6 +487,10 @@ main p a, main li a {
   font-weight: 400;
   color: var(--muted);
   flex-shrink: 0;
+  transition: color .15s;
+}
+.faq-summary:hover::after {
+  color: var(--ink);
 }
 .faq-item[open] .faq-summary::after {
   content: "–";
@@ -304,6 +505,68 @@ main p a, main li a {
   font-size: .975rem;
   line-height: 1.55;
   max-width: 65ch;
+}
+.signature {
+  grid-column: 2;
+  margin: 1.75rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.signature strong {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+/* Mural de Fundadores */
+#founders-section {
+  border-top: 2px solid var(--line-strong);
+  padding-top: 2.5rem;
+  margin: 0 0 3rem;
+}
+#founders-section[hidden] {
+  display: none;
+}
+.founders-lead h2 {
+  margin: 0 0 .65rem;
+}
+.founders-lead p {
+  font-size: .925rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.founders-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  column-gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+.founders-list li {
+  display: grid;
+  grid-template-columns: 6px 1fr;
+  column-gap: .65rem;
+  align-items: baseline;
+  padding: .75rem 0;
+  margin: 0;
+  border-bottom: var(--rule) solid var(--line);
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 781px) {
+  .founders-list li:nth-child(-n+2) {
+    padding-top: .15rem;
+  }
+}
+.founders-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--ink);
+  transform: translateY(-2px);
 }
 
 footer {
@@ -321,6 +584,49 @@ footer a:hover {
   color: var(--ink);
 }
 
+@media (max-width: 780px) {
+  .band {
+    margin-bottom: 36px;
+  }
+  .topbar {
+    margin-bottom: 1.5rem;
+  }
+  .letter-section,
+  .benefit-section,
+  .checkout-section,
+  .faq-section,
+  #founders-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .benefit-section,
+  .checkout-section,
+  .faq-section,
+  #founders-section {
+    padding-top: 2rem;
+  }
+  .benefit-list,
+  .faq-list,
+  .founders-list {
+    border-top: var(--rule) solid var(--line);
+  }
+  .benefit-list li:first-child {
+    padding-top: 1.05rem;
+  }
+  .faq-item:first-child .faq-summary {
+    padding-top: .95rem;
+    min-height: 52px;
+  }
+  .plan.single {
+    padding: 1.5rem 1.25rem;
+  }
+  .signature {
+    grid-column: 1;
+    margin-top: .5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -328,64 +634,79 @@ footer a:hover {
     transition-duration: 0.01ms !important;
   }
 }
-.steps li { margin: .35rem 0; }
-.signature { margin-top: 1.5rem; color: var(--muted); }
-.plan.single { max-width: 26rem; }
 </style>
-<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+<script defer src="/fundadores.js"></script>
 <script src="/clarity.js" async></script>
 </head>
 <body>
 <header class="band">
   <div class="band-inner">
-    <a href="/" class="brand">
-      <img src="/icon-192.png" width="34" height="34" alt="" class="brand-icon">
-      <span>Vaelo</span>
-    </a>
+    <div class="topbar">
+      <a href="/" class="brand">
+        <img src="/icon-192.png" width="34" height="34" alt="" class="brand-icon">
+        <span>Vaelo</span>
+      </a>
+      <a href="https://app.vaelo.club" class="topbar-link">Abrir o app</a>
+    </div>
+    <div class="band-hero">
+      <h1>Fundadores do Vaelo</h1>
+      <p class="muted">Um convite pessoal para quem eu conheço.</p>
+    </div>
   </div>
   <svg class="wave" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <path d="M0 0h400v6c-22 0-30 16-55 16S310 6 285 6s-35 16-60 16-35-16-60-16-35 16-60 16S70 6 45 6 15 15 0 15Z" />
   </svg>
 </header>
 <main>
-<h1>Fundadores do Vaelo</h1>
-<p class="muted">Um convite pessoal para quem eu conheço.</p>
-
-<section aria-labelledby="why-title">
+<section class="letter-section" aria-labelledby="why-title">
 <h2 id="why-title">Por que estou construindo o Vaelo</h2>
+<div class="letter-body">
 <p>Toda viagem, casa dividida ou offsite termina do mesmo jeito: uma planilha que ninguém atualiza ou um app que guarda as contas do grupo no servidor de outra empresa e cobra de cada pessoa.</p>
 <p>O Vaelo divide despesas em grupo com os dados cifrados nos aparelhos de vocês. Ele funciona sem internet e corrige pelo IPCA aquela dívida que ficou para depois.</p>
 <p>Quero que os primeiros 100 Fundadores sejam pessoas que eu conheço e que vão me dizer, sem filtro, o que está bom e o que está ruim.</p>
+</div>
 </section>
 
-<section aria-labelledby="what-title">
-<h2 id="what-title">O que o Fundador inclui</h2>
-<ul>
-<li>Pagamento único de R$ 129, sem mensalidade. Depois das 100 vagas, o preço passa a R$ 179.</li>
-<li>Até 10 grupos com despesas ilimitadas, para todos os membros. Seus amigos não pagam nada.</li>
+<section class="benefit-section" aria-labelledby="what-title">
+<div class="benefit-lead">
+<h2 id="what-title">Você paga uma vez, o grupo todo ganha</h2>
+<p>Não é um app só para você. Ao virar Fundador, você libera até 10 grupos, com despesas ilimitadas, para todo mundo que está neles. Seus amigos não pagam nada, nem precisam virar Fundadores.</p>
+</div>
+<ul class="benefit-list">
+<li>Pagamento único de R$&nbsp;129, sem mensalidade. Depois das 100 vagas, o preço passa a R$&nbsp;179.</li>
+<li>Até 10 grupos com despesas ilimitadas, para todos os membros: viagem, casa, almoço de time.</li>
 <li>O PDF com o demonstrativo da dívida corrigida, mês a mês.</li>
 <li>Um grupo dos Fundadores comigo, onde decidimos juntos o que vem depois.</li>
-<li>Seu nome na lista de Fundadores do Vaelo, se você quiser.</li>
+<li>Seu nome na lista de Fundadores do Vaelo, só se você quiser: preencha o campo no checkout. Em branco, você não aparece, e pode pedir a retirada a qualquer momento por e-mail.</li>
 </ul>
 </section>
 
-<section aria-labelledby="how-title">
+<section class="checkout-section" aria-labelledby="how-title">
+<div class="checkout-steps">
 <h2 id="how-title">Antes de pagar</h2>
 <ol class="steps">
-<li>Crie sua conta em <a href="https://app.vaelo.club">app.vaelo.club</a>.</li>
-<li>Pague com <strong>o mesmo e-mail da conta</strong>. É por ele que o plano chega até você.</li>
-<li>Depois, escolha no app quais grupos liberar.</li>
+<li><span>Crie sua conta em <a href="https://app.vaelo.club">app.vaelo.club</a>.</span></li>
+<li><span>Pague com <strong>o mesmo e-mail da conta</strong>. É por ele que o plano chega até você.</span></li>
+<li><span>Depois, escolha no app quais grupos liberar.</span></li>
 </ol>
+</div>
 <article class="plan single" id="fundador">
-<stripe-buy-button id="buy-founder" buy-button-id="buy_btn_1UYY9TLwd9z4kDhUrUYo1XWA" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <h3>Fundador vitalício</h3>
-<span class="badge">lote 1 · 100 vagas</span>
+<p class="plan-figure" aria-label="R$ 129, pagamento único"><span class="currency" aria-hidden="true">R$</span><span aria-hidden="true">129</span><span class="plan-figure-note" aria-hidden="true">pagamento único</span></p>
+<div class="lot">
+<p class="lot-label">Lote 1: R$&nbsp;129 · restam <span id="lot-left">100</span> de 100 vagas</p>
+<div class="lot-bar" role="img" aria-label="0 de 100 vagas do lote 1 preenchidas"><div class="lot-fill" style="width:0%"></div></div>
+<p class="lot-next">Quando as 100 vagas acabarem, o preço passa a R$&nbsp;179, para todos.</p>
+</div>
+<a class="button primary" id="buy-founder" href="https://buy.stripe.com/4gM28sckG62sdEG08Og7e04" rel="noopener">Quero ser Fundador · R$&nbsp;129</a>
 <p class="payment-note">Pagamento com cartão ou Pix pelo Stripe.</p>
 </article>
 </section>
 
 <section class="faq-section" aria-labelledby="faq-title">
+<div class="faq-lead">
 <h2 id="faq-title">Perguntas</h2>
+</div>
 <div class="faq-list">
   <details class="faq-item">
     <summary class="faq-summary">E se eu não quiser pagar agora?</summary>
@@ -404,7 +725,14 @@ footer a:hover {
     <p class="faq-desc">Não. As despesas ficam nos aparelhos, cifradas de ponta a ponta. O servidor só repassa blocos cifrados e não consegue ler o conteúdo.</p>
   </details>
 </div>
-<p class="signature">Obrigado por estar aqui.<br>Alexandre</p>
+<p class="signature">Obrigado por estar aqui.<br><strong>Alexandre</strong></p>
+</section>
+<section id="founders-section" aria-labelledby="founders-title" hidden>
+<div class="founders-lead">
+<h2 id="founders-title">Nossos Fundadores</h2>
+<p class="muted">Só aparece quem preencheu o nome no checkout. Para sair da lista, escreva para <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>.</p>
+</div>
+<ul id="founders-list" class="founders-list"></ul>
 </section>
 <footer><a href="/">Início</a> · <a href="/pro">Pro</a> · <a href="/suporte">Suporte</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a> · <a href="/excluir-conta">Excluir conta</a> · Um produto <a href="https://nexaduo.com">NexaDuo</a> · Contato: <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a></footer>
 </main>
