@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https://*.clarity.ms https://c.bing.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://js.stripe.com https://*.clarity.ms; frame-src https://js.stripe.com; connect-src https://*.clarity.ms https://c.bing.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<title>Vaelo Pro: despesas em grupo ilimitadas | Planos Pro e Fundador</title>
-<meta name="description" content="Uma pessoa assina e libera até 5 grupos com despesas diárias ilimitadas para todos os amigos. Conheça o Vaelo Pro e o Fundador Vitalício.">
-<meta name="keywords" content="vaelo pro, planos vaelo, fundador vaelo, dividir despesas ilimitado, splitwise pro alternativa, rateio despesas assinatura, demonstrativo ipca">
+<title>Vaelo Pro: despesas em grupo ilimitadas | Planos Pro</title>
+<meta name="description" content="Uma pessoa assina e libera até 5 grupos com despesas diárias ilimitadas para todos os amigos. Conheça o Vaelo Pro.">
+<meta name="keywords" content="vaelo pro, planos vaelo, dividir despesas ilimitado, splitwise pro alternativa, rateio despesas assinatura, demonstrativo ipca">
 <link rel="canonical" href="https://vaelo.club/pro">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vaelo">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://vaelo.club/pro">
-<meta property="og:title" content="Vaelo Pro: despesas em grupo ilimitadas | Planos Pro e Fundador">
-<meta property="og:description" content="Uma pessoa assina e libera até 5 grupos com despesas diárias ilimitadas para todos os amigos. Conheça o Vaelo Pro e o Fundador Vitalício.">
+<meta property="og:title" content="Vaelo Pro: despesas em grupo ilimitadas | Planos Pro">
+<meta property="og:description" content="Uma pessoa assina e libera até 5 grupos com despesas diárias ilimitadas para todos os amigos. Conheça o Vaelo Pro.">
 <meta property="og:image" content="https://vaelo.club/og.png">
 <meta name="theme-color" content="#16171a">
 <link rel="icon" href="/favicon.png?v=3" type="image/png">
@@ -23,8 +23,8 @@
 
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vaelo Pro: despesas em grupo ilimitadas | Planos Pro e Fundador">
-<meta name="twitter:description" content="Uma pessoa assina e libera até 5 grupos com despesas diárias ilimitadas para todos os amigos. Conheça o Vaelo Pro e o Fundador Vitalício.">
+<meta name="twitter:title" content="Vaelo Pro: despesas em grupo ilimitadas | Planos Pro">
+<meta name="twitter:description" content="Uma pessoa assina e libera até 5 grupos com despesas diárias ilimitadas para todos os amigos. Conheça o Vaelo Pro.">
 <meta name="twitter:image" content="https://vaelo.club/og.png">
 <meta name="twitter:image:alt" content="Vaelo Pro — planos de assinatura para dividir despesas em grupo">
 <meta property="og:image:width" content="1200">
@@ -208,7 +208,7 @@ main p a, main li a {
 
 .plans {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 1.25rem;
 }
@@ -453,52 +453,6 @@ footer a:hover {
             "returnFees": "https://schema.org/FreeReturn",
             "merchantReturnLink": "https://vaelo.club/termos"
           }
-        },
-        {
-          "@type": "Offer",
-          "@id": "https://vaelo.club/pro#fundador",
-          "name": "Vaelo Fundador Vitalício",
-          "price": "129.00",
-          "priceCurrency": "BRL",
-          "availability": "https://schema.org/InStock",
-          "url": "https://vaelo.club/pro#fundador",
-          "description": "Acesso vitalício único com até 10 grupos liberados para todos os participantes.",
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": {
-              "@type": "MonetaryAmount",
-              "value": 0,
-              "currency": "BRL"
-            },
-            "shippingDestination": {
-              "@type": "DefinedRegion",
-              "addressCountry": "BR"
-            },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 0,
-                "maxValue": 0,
-                "unitCode": "DAY"
-              },
-              "transitTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 0,
-                "maxValue": 0,
-                "unitCode": "DAY"
-              }
-            }
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "BR",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 7,
-            "returnMethod": "https://schema.org/KeepProduct",
-            "returnFees": "https://schema.org/FreeReturn",
-            "merchantReturnLink": "https://vaelo.club/termos"
-          }
         }
       ]
     },
@@ -571,7 +525,7 @@ footer a:hover {
 <section aria-labelledby="pro-title">
 <h2 id="pro-title">O que o Pro libera</h2>
 <ul>
-<li>Despesas ilimitadas em até 5 grupos, para todos os membros desses grupos. Com Fundador, são até 10 grupos.</li>
+<li>Despesas ilimitadas em até 5 grupos, para todos os membros desses grupos.</li>
 <li>O PDF com o demonstrativo da dívida corrigida, mês a mês.</li>
 </ul>
 </section>
@@ -590,13 +544,6 @@ footer a:hover {
 <span class="badge">economize ~37%</span>
 <p>Até 5 grupos.</p>
 <p class="payment-note">Pagamento com cartão pelo Stripe.</p>
-</article>
-<article class="plan" id="fundador">
-<a class="button primary" id="buy-founder" href="https://buy.stripe.com/4gM28sckG62sdEG08Og7e04" rel="noopener">Quero ser Fundador · R$ 129</a>
-<h3>Fundador vitalício</h3>
-<span class="badge">pague uma vez</span>
-<p>Só 100 vagas, e nunca mais depois. Até 10 grupos.</p>
-<p class="payment-note">Pagamento com cartão ou Pix pelo Stripe.</p>
 </article>
 </div>
 </section>
