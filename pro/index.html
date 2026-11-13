@@ -235,6 +235,8 @@ main p a, main li a {
   font-size: .8rem;
   font-weight: 650;
 }
+.price { margin: .25rem 0 .5rem; }
+.price strong { font-size: 1.5rem; letter-spacing: -.02em; }
 .payment-note {
   font-size: .85rem;
   color: var(--muted);
@@ -536,15 +538,17 @@ footer a:hover {
 <article class="plan" id="pro-mensal">
 <stripe-buy-button id="buy-pro-monthly" buy-button-id="buy_btn_1UYYQxLwd9z4kDhUfIaZZi5i" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <h3>Pro mensal</h3>
+<p class="price"><strong>R$ 7,90</strong> por mês</p>
 <p>Até 5 grupos.</p>
-<p class="payment-note">Pagamento com cartão pelo Stripe.</p>
+<p class="payment-note">Não apareceu o botão de pagamento? Escreva para <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>.</p>
 </article>
 <article class="plan" id="pro-anual">
 <stripe-buy-button id="buy-pro-annual" buy-button-id="buy_btn_1UYYhvLwd9z4kDhUanU8gEEg" publishable-key="pk_live_51UXYM0Lwd9z4kDhUKR5wPc0pS5R9ZljPuo2NYuWXjgXUqZRM4PPuvhY3nqlCJ6XNeKGoqy1xqwXRtT76SPBoj143004b5SE2f5"></stripe-buy-button>
 <h3>Pro anual</h3>
 <span class="badge">economize ~37%</span>
+<p class="price"><strong>R$ 59,90</strong> por ano <span class="muted">(R$ 4,99 por mês)</span></p>
 <p>Até 5 grupos.</p>
-<p class="payment-note">Pagamento com cartão pelo Stripe.</p>
+<p class="payment-note">Não apareceu o botão de pagamento? Escreva para <a href="mailto:alexandre@nexaduo.com">alexandre@nexaduo.com</a>.</p>
 </article>
 </div>
 </section>
