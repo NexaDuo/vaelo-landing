@@ -28,7 +28,7 @@ Vaelo é um aplicativo desenvolvido pela NexaDuo, nativo em português do Brasil
 ## Plataformas
 
 - **Web / PWA:** Disponível para qualquer navegador em [https://app.vaelo.club](https://app.vaelo.club). No iOS (Safari), basta tocar em Compartilhar > "Adicionar à Tela de Início" para rodar em tela cheia.
-- **Android:** Disponível no Google Play ([https://play.google.com/store/apps/details?id=club.vaelo.android](https://play.google.com/store/apps/details?id=club.vaelo.android)).
+- **Android:** aplicativo nativo em teste fechado, fora da Google Play por enquanto. Use o app web.
 - **iPhone / iOS:** Aplicativo nativo em desenvolvimento.
 
 ## Perguntas Frequentes

@@ -10,7 +10,7 @@
 - **Desenvolvedor:** NexaDuo ([https://nexaduo.com](https://nexaduo.com))
 - **Site Oficial:** [https://vaelo.club](https://vaelo.club)
 - **App Web:** [https://app.vaelo.club](https://app.vaelo.club)
-- **App Android:** [Google Play Store](https://play.google.com/store/apps/details?id=club.vaelo.android)
+- **App Android:** em teste fechado, fora da loja por enquanto. Use o app web.
 - **Contato / Suporte:** alexandre@nexaduo.com ([https://vaelo.club/suporte](https://vaelo.club/suporte))
 - **Jurisdição e Moeda:** Brasil, Real Brasileiro (BRL), legislação civil brasileira (Código Civil).
 
