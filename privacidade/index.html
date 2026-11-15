@@ -249,7 +249,7 @@ footer a:hover {
 </header>
 <main>
 <h1>Política de privacidade</h1>
-<p class="muted">Vigente desde 4 de novembro de 2026.</p>
+<p class="muted">Vigente desde 15 de novembro de 2026.</p>
 <p>O Vaelo é um app para dividir despesas em grupo, oferecido pela NexaDuo. Ele foi feito para que nós não precisemos ver os seus dados: os lançamentos ficam nos seus aparelhos e só passam pelos nossos servidores cifrados de ponta a ponta.</p>
 
 <h2>O que fica nos seus aparelhos</h2>
@@ -260,7 +260,8 @@ footer a:hover {
 <li><strong>Conta:</strong> o seu e-mail; se você entrar com o Google, também o nome e o identificador que o Google nos envia; e as chaves públicas das Passkeys que você cadastrar.</li>
 <li><strong>Sincronização:</strong> os lançamentos do grupo viajam como blocos cifrados entre os aparelhos dos membros. Não temos a chave para lê-los. Cada bloco é apagado em até 90 dias.</li>
 <li><strong>Metadados técnicos:</strong> para funcionar, o servidor vê qual conta enviou cada bloco, quando, o tamanho e um identificador do grupo (não o nome). Os registros de acesso incluem endereço IP e ficam guardados pelo tempo dos nossos provedores de infraestrutura.</li>
-<li><strong>Lista de Fundadores:</strong> se você comprar o plano Fundador e preencher o campo de nome no checkout, esse nome (e o cargo, se informar) poderá aparecer numa lista pública. Sem preencher, você não aparece. Para retirar o nome, escreva para o e-mail de contato abaixo.</li>
+<li><strong>Compra do plano Fundador:</strong> ao comprar, guardamos o seu nome e e-mail informados no checkout, a sua escolha sobre aparecer na lista pública de Fundadores, o valor e a data do pagamento, o código do cupom (se usou) e os códigos do pagamento no Stripe (usados para conferir e rastrear a compra). Guardamos esses dados enquanto forem necessários para comprovar o pagamento e o seu consentimento e para cumprir obrigações fiscais. Nada disso é exibido, a não ser o nome, e só se você escolher aparecer.</li>
+<li><strong>Lista pública de Fundadores:</strong> o seu nome só aparece se você responder que sim à pergunta "Nome na lista pública de Fundadores?" no checkout. Se responder que não, você não aparece. Para retirar o nome depois, ou para pedir a exclusão desses dados, escreva para o e-mail de contato abaixo.</li>
 <li><strong>Relatório de erros:</strong> quando o app falha, ele envia sem identificar você o código do erro, o ponto do programa onde ocorreu, a versão do app e o navegador e sistema (por exemplo, "Chrome 141 · Android"). Não vai conta, conteúdo, nomes nem valores. Cada relatório é apagado em 30 dias.</li>
 <li><strong>Adicionar aparelho:</strong> o pedido de pareamento entre dois aparelhos da mesma conta fica no servidor por no máximo 10 minutos.</li>
 </ul>
@@ -270,6 +271,7 @@ footer a:hover {
 <ul>
 <li><strong>Supabase</strong> — login, banco de dados e retransmissão dos blocos cifrados (servidores nos EUA).</li>
 <li><strong>Cloudflare Turnstile</strong> — verificação anti-robô na tela de login. Ela pode funcionar sem mostrar nada a você: a Cloudflare analisa sinais do seu navegador, como o endereço IP, para decidir se quem acessa é uma pessoa. Esse tratamento segue o <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Adendo de Privacidade do Cloudflare Turnstile</a>.</li>
+<li><strong>Stripe</strong> — pagamentos (Pro e Fundador): recebe os dados do checkout e nos devolve o nome, o e-mail e os códigos do pagamento.</li>
 <li><strong>Resend</strong> — envio do código de login por e-mail.</li>
 <li><strong>Google</strong> — somente se você escolher entrar com o Google.</li>
 <li><strong>Cloudflare</strong> — hospedagem do site e do app web (Cloudflare Workers) e entrega das páginas. Os registros de acesso incluem endereço IP.</li>
