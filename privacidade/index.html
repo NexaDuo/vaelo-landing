@@ -249,7 +249,7 @@ footer a:hover {
 </header>
 <main>
 <h1>Política de privacidade</h1>
-<p class="muted">Vigente desde 15 de novembro de 2026.</p>
+<p class="muted">Vigente desde 21 de novembro de 2026.</p>
 <p>O Vaelo é um app para dividir despesas em grupo, oferecido pela NexaDuo. Ele foi feito para que nós não precisemos ver os seus dados: os lançamentos ficam nos seus aparelhos e só passam pelos nossos servidores cifrados de ponta a ponta.</p>
 
 <h2>O que fica nos seus aparelhos</h2>
@@ -263,6 +263,9 @@ footer a:hover {
 <li><strong>Compra do plano Fundador:</strong> ao comprar, guardamos o seu nome e e-mail informados no checkout, a sua escolha sobre aparecer na lista pública de Fundadores, o valor e a data do pagamento, o código do cupom (se usou) e os códigos do pagamento no Stripe (usados para conferir e rastrear a compra). Guardamos o nome, o e-mail e a sua escolha sobre a lista enquanto a lista de Fundadores existir; o valor, a data e os códigos do pagamento, enquanto forem necessários para comprovar a compra e cumprir obrigações fiscais. Nada disso é exibido, a não ser o nome, e só se você escolher aparecer.</li>
 <li><strong>Lista pública de Fundadores:</strong> o seu nome só aparece se você responder que sim à pergunta "Nome na lista pública de Fundadores?" no checkout. Se responder que não, você não aparece. Para retirar o nome depois, ou para pedir a exclusão desses dados, escreva para o e-mail de contato abaixo: atendemos em até 15 dias.</li>
 <li><strong>Relatório de erros:</strong> quando o app falha, ele envia sem identificar você o código do erro, o ponto do programa onde ocorreu, a versão do app, o navegador e sistema (por exemplo, "Chrome 141 · Android") e, no carregamento, uma faixa de tempo (por exemplo, "entre 1 e 2 segundos"). Guardamos só a hora do envio, sem minutos. Não vai conta, conteúdo, nomes, valores nem identificador do aparelho. Como em qualquer envio pela internet, os registros de acesso dos provedores (acima) veem o endereço IP da conexão, mas nós não o guardamos no relatório. Cada relatório é apagado em 30 dias.</li>
+<li><strong>E-mails adicionais da conta:</strong> você pode juntar outros e-mails à sua conta (até 5, contando o do login). Para cada um, enviamos um código de confirmação a esse endereço; só entra se você digitar o código. Cada e-mail pertence a uma única conta. Por isso o servidor passa a saber <strong>quais e-mails são da mesma conta</strong>, e quem já conhece dois e-mails seus pode, ao procurá-los, descobrir que são da mesma conta. Guardamos o e-mail de forma que não conseguimos exibi-lo por inteiro nos avisos (só uma parte), e usamos um código irreversível dele para evitar duplicidade. Ao remover um e-mail, ele fica indisponível para outras contas por 30 dias.</li>
+<li><strong>Códigos de confirmação e limites de envio:</strong> o código enviado vale 10 minutos e é guardado apenas em forma irreversível. Registramos os pedidos de envio (conta, destinatário em forma irreversível e hora) para limitar abusos; para endereços que não têm conta, o registro dura 2 dias.</li>
+<li><strong>Registros internos de erro da conta:</strong> se o vínculo entre o seu login e a lista de e-mails falhar, guardamos um registro interno com o identificador da conta (sem o e-mail) e o motivo. Ele é apagado em até 90 dias, mesmo que você exclua a conta antes.</li>
 <li><strong>Adicionar aparelho:</strong> o pedido de pareamento entre dois aparelhos da mesma conta fica no servidor por no máximo 10 minutos.</li>
 </ul>
 
@@ -272,7 +275,7 @@ footer a:hover {
 <li><strong>Supabase</strong> — login, banco de dados e retransmissão dos blocos cifrados (servidores nos EUA).</li>
 <li><strong>Cloudflare Turnstile</strong> — verificação anti-robô na tela de login. Ela pode funcionar sem mostrar nada a você: a Cloudflare analisa sinais do seu navegador, como o endereço IP, para decidir se quem acessa é uma pessoa. Esse tratamento segue o <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Adendo de Privacidade do Cloudflare Turnstile</a>.</li>
 <li><strong>Stripe</strong> — pagamentos (Pro e Fundador): recebe os dados do checkout e nos devolve o nome, o e-mail e os códigos do pagamento.</li>
-<li><strong>Resend</strong> — envio do código de login por e-mail.</li>
+<li><strong>Resend</strong> — envio do código de login e dos códigos de confirmação de e-mails da conta, por e-mail.</li>
 <li><strong>Google</strong> — somente se você escolher entrar com o Google.</li>
 <li><strong>Cloudflare</strong> — hospedagem do site e do app web (Cloudflare Workers) e entrega das páginas. Os registros de acesso incluem endereço IP.</li>
 <li><strong>Microsoft Clarity</strong> — nas páginas do site (vaelo.club), para medir visitas, cliques e rolagem com cookies; não roda dentro do app nem vê seus dados do app.</li>
