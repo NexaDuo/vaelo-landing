@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "club.vaelo.android",
+      "sha256_cert_fingerprints": [
+        "D7:E8:23:5D:F0:45:E8:C7:DB:3D:03:18:49:5D:E4:5A:13:26:D7:04:5C:12:F8:78:8B:8B:61:70:24:17:A8:FC"
+      ]
+    }
+  }
+]

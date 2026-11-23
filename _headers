@@ -9,6 +9,11 @@
 /.well-known/apple-app-site-association
   Content-Type: application/json
 
+# Android Credential Manager checks the Passkey RP ID (vaelo.club) against this file (get_login_creds only: it does not make vaelo.club links open the app).
+/.well-known/assetlinks.json
+  Content-Type: application/json
+  Cache-Control: no-cache
+
 /*.woff2
   Cache-Control: public, max-age=604800
 /*.png
