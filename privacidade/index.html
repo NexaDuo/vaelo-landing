@@ -249,7 +249,7 @@ footer a:hover {
 </header>
 <main>
 <h1>Política de privacidade</h1>
-<p class="muted">Vigente desde 21 de novembro de 2026.</p>
+<p class="muted">Vigente desde 23 de novembro de 2026.</p>
 <p>O Vaelo é um app para dividir despesas em grupo, oferecido pela NexaDuo. Ele foi feito para que nós não precisemos ver os seus dados: os lançamentos ficam nos seus aparelhos e só passam pelos nossos servidores cifrados de ponta a ponta.</p>
 
 <h2>O que fica nos seus aparelhos</h2>
@@ -266,16 +266,17 @@ footer a:hover {
 <li><strong>E-mails adicionais da conta:</strong> você pode juntar outros e-mails à sua conta (até 5, contando o do login). Para cada um, enviamos um código de confirmação a esse endereço; só entra se você digitar o código. Cada e-mail pertence a uma única conta. Por isso o servidor passa a saber <strong>quais e-mails são da mesma conta</strong>, e quem já conhece dois e-mails seus pode, ao procurá-los, descobrir que são da mesma conta. Guardamos o e-mail de forma que não conseguimos exibi-lo por inteiro nos avisos (só uma parte), e usamos um código irreversível dele para evitar duplicidade. Ao remover um e-mail, ele fica indisponível para outras contas por 30 dias.</li>
 <li><strong>Códigos de confirmação e limites de envio:</strong> o código enviado vale 10 minutos e é guardado apenas em forma irreversível. Registramos os pedidos de envio (conta, destinatário em forma irreversível e hora) para limitar abusos; para endereços que não têm conta, o registro dura 2 dias.</li>
 <li><strong>Registros internos de erro da conta:</strong> se o vínculo entre o seu login e a lista de e-mails falhar, guardamos um registro interno com o identificador da conta (sem o e-mail) e o motivo. Ele é apagado em até 90 dias, mesmo que você exclua a conta antes.</li>
+<li><strong>Convite por e-mail:</strong> se você convidar alguém informando o e-mail dela ou dele, o servidor guarda esse e-mail apenas de forma irreversível (uma impressão digital, para conferir quem entra), um link de uso único que vale 24 horas e a sua aprovação da entrada; o servidor não guarda a chave do grupo. O e-mail enviado não diz quem convidou e não traz nome de grupo nem valores. Quem recebe só entra no grupo se confirmar o próprio e-mail com um código e se você aprovar. Limitamos o número de convites por conta, por destinatário e por dia, e registramos esses pedidos só para isso. Você pode cancelar um convite pendente.</li>
 <li><strong>Adicionar aparelho:</strong> o pedido de pareamento entre dois aparelhos da mesma conta fica no servidor por no máximo 10 minutos.</li>
 </ul>
 
 <h2>Com quem compartilhamos</h2>
-<p>Não vendemos dados e não exibimos anúncios. O app não usa ferramentas de análise ou rastreamento. Usamos estes provedores:</p>
+<p>Não vendemos dados e não exibimos anúncios. O app não usa ferramentas de análise ou rastreamento próprias (a única exceção é o rastreio de abertura e clique dos e-mails de convite, pela Resend, descrito abaixo). Usamos estes provedores:</p>
 <ul>
 <li><strong>Supabase</strong> — login, banco de dados e retransmissão dos blocos cifrados (servidores nos EUA).</li>
 <li><strong>Cloudflare Turnstile</strong> — verificação anti-robô na tela de login. Ela pode funcionar sem mostrar nada a você: a Cloudflare analisa sinais do seu navegador, como o endereço IP, para decidir se quem acessa é uma pessoa. Esse tratamento segue o <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener">Adendo de Privacidade do Cloudflare Turnstile</a>.</li>
 <li><strong>Stripe</strong> — pagamentos (Pro e Fundador): recebe os dados do checkout e nos devolve o nome, o e-mail e os códigos do pagamento.</li>
-<li><strong>Resend</strong> — envio do código de login e dos códigos de confirmação de e-mails da conta, por e-mail.</li>
+<li><strong>Resend</strong> — envio do código de login, dos códigos de confirmação de e-mails da conta e dos convites por e-mail. A Resend guarda o conteúdo do e-mail por cerca de 30 dias e, nos convites, <strong>registra se o e-mail foi aberto e se o link foi clicado</strong> (rastreio do provedor, que não desligamos).</li>
 <li><strong>Google</strong> — somente se você escolher entrar com o Google.</li>
 <li><strong>Cloudflare</strong> — hospedagem do site e do app web (Cloudflare Workers) e entrega das páginas. Os registros de acesso incluem endereço IP.</li>
 <li><strong>Microsoft Clarity</strong> — nas páginas do site (vaelo.club), para medir visitas, cliques e rolagem com cookies; não roda dentro do app nem vê seus dados do app.</li>
