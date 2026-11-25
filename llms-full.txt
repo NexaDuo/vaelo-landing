@@ -11,7 +11,7 @@
 - **Site Oficial:** [https://vaelo.club](https://vaelo.club)
 - **App Web:** [https://app.vaelo.club](https://app.vaelo.club)
 - **App Android:** em teste fechado, fora da loja por enquanto. Use o app web.
-- **Contato / Suporte:** alexandre@nexaduo.com ([https://vaelo.club/suporte](https://vaelo.club/suporte))
+- **Contato / Suporte:** contato@vaelo.club ([https://vaelo.club/suporte](https://vaelo.club/suporte))
 - **Jurisdição e Moeda:** Brasil, Real Brasileiro (BRL), legislação civil brasileira (Código Civil).
 
 ---
