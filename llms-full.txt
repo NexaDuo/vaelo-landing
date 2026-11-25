@@ -27,9 +27,9 @@ O Vaelo é uma alternativa brasileira e moderna a aplicativos como Splitwise, Tr
    - TTL (Time To Live) de 90 dias: pacotes cifrados são deletados automaticamente do servidor após 90 dias.
    - Nem a NexaDuo nem invasores do servidor conseguem inspecionar despesas, saldos, valores ou participantes.
 
-2. **Correção Monetária Oficial pelo IPCA e INPC:**
+2. **Correção Monetária Oficial pelo IPCA-15 e INPC:**
    - Dívidas de longa duração (como despesas de viagem pagas meses antes, empréstimos amigáveis ou despesas de república) sofrem perda do poder de compra pela inflação.
-   - O Vaelo consulta diretamente as APIs e séries oficiais do IBGE (SIDRA tabelas 1737 para IPCA e 1736 para INPC).
+   - O Vaelo consulta diretamente as APIs e séries oficiais do IBGE (SIDRA tabela 3065 para o IPCA-15, o índice padrão, e 1736 para o INPC). Grupos antigos que já tinham pagamentos no IPCA mensal (tabela 1737) continuam nele.
    - Cada grupo ou despesa pode escolher o índice de correção.
    - O cálculo é automático, transparente e sem juros abusivos.
    - Segue a regra de imputação do Código Civil Brasileiro (art. 355: pagamentos parciais amortizam primeiro as dívidas mais antigas).
@@ -38,7 +38,7 @@ O Vaelo é uma alternativa brasileira e moderna a aplicativos como Splitwise, Tr
 3. **Modelo de Precificação Coletivo e Transparente:**
    - No Splitwise, cada usuário precisa pagar uma assinatura individual cara para liberar recursos básicos.
    - No Vaelo, **uma única assinatura Pro libera até 5 grupos inteiros**, beneficiando todos os participantes desses grupos.
-   - O plano gratuito não é um "trial": oferece todas as regras de divisão, simplificação de dívidas e IPCA para sempre, com cota generosa de 5 novas despesas por dia por grupo.
+   - O plano gratuito não é um "trial": oferece todas as regras de divisão, simplificação de dívidas e correção pela inflação para sempre, com cota generosa de 5 novas despesas por dia por grupo.
 
 ---
 
@@ -74,7 +74,7 @@ O Vaelo oferece 4 tipos de rateio de despesas:
 
 ## 5. Planos e Preços
 
-| Plano | Preço | Limite de Grupos | Despesas por Dia | IPCA / INPC | Beneficiários |
+| Plano | Preço | Limite de Grupos | Despesas por Dia | IPCA-15 / INPC | Beneficiários |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Gratuito** | R$ 0 | Ilimitado | Até 5 novas despesas/dia por grupo | Grátis para sempre | Individual |
 | **Pro Mensal** | R$ 7,90 / mês | Até 5 grupos liberados | Ilimitadas | Incluído | Todos os membros dos 5 grupos |
@@ -91,7 +91,7 @@ O Vaelo oferece 4 tipos de rateio de despesas:
 | :--- | :--- | :--- |
 | **Armazenamento de Transações** | Cifrado no aparelho (Local-first, E2EE) | Em claro nos servidores da empresa |
 | **Servidor vê despesas e nomes?** | Não (Relay cego com TTL de 90 dias) | Sim (Acesso completo aos dados) |
-| **Correção pela Inflação (IPCA/INPC)** | Nativa, automática e gratuita | Não possui |
+| **Correção pela Inflação (IPCA-15/INPC)** | Nativa, automática e gratuita | Não possui |
 | **Quem precisa pagar a assinatura?** | 1 pessoa libera até 5 grupos inteiros | Cada usuário precisa pagar o seu Pro |
 | **Funcionamento sem Internet** | Totalmente funcional offline | Limitado / frequentemente bloqueado |
 | **Anúncios na tela** | Zero anúncios | Exibe anúncios invasivos |
