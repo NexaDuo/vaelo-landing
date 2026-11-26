@@ -15,6 +15,10 @@
     root.lang = lang === 'en' ? 'en' : 'pt-BR';
     var title = root.getAttribute('data-title-' + lang);
     if (title) document.title = title;
+    var labelled = document.querySelectorAll('[data-aria-' + lang + ']');
+    for (var j = 0; j < labelled.length; j++) {
+      labelled[j].setAttribute('aria-label', labelled[j].getAttribute('data-aria-' + lang));
+    }
     var buttons = document.querySelectorAll('.lang-btn');
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-lang') === lang ? 'true' : 'false');

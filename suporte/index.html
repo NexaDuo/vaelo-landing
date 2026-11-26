@@ -189,30 +189,38 @@ main p a, main li a {
 
 /* Topo e rodape persistentes (vaelo#171): bloco igual em todas as paginas */
 .topbar { width: 100%; display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1rem; min-height: 48px; }
-.topbar .brand { margin-right: auto; }
+.topbar-wrap { max-width: var(--chrome-max); margin: 0 auto; padding: .75rem 16px 1.25rem; }
+.topbar-wrap .topbar { margin: 0; justify-content: flex-start; }
+.topbar .brand { margin-right: auto; min-height: 44px; }
 .site-nav { display: flex; align-items: center; gap: .25rem; }
 .nav-link {
-  display: inline-block; line-height: 44px; padding: 0 .65rem;
+  display: inline-block; min-width: 44px; line-height: 44px; padding: 0 .65rem; text-align: center;
   color: var(--on-band-muted); font-size: .95rem; font-weight: 600; text-decoration: none;
   text-underline-offset: .35em; transition: color .15s;
 }
 .nav-link:hover, .nav-link[aria-current="page"] { color: var(--on-band); }
 .nav-link[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; }
+.site-footer a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: .3em; }
 .nav-cta {
-  display: inline-flex; align-items: center; min-height: 40px; margin-left: .35rem; padding: 0 1rem;
+  display: inline-flex; align-items: center; min-height: 44px; margin-left: .35rem; padding: 0 1rem;
   border-radius: 999px; border: var(--rule) solid rgba(255, 255, 255, .28);
   color: var(--on-band); font-size: .95rem; font-weight: 650; text-decoration: none; white-space: nowrap;
   transition: background-color .15s, border-color .15s;
 }
 .nav-cta:hover { background: rgba(255, 255, 255, .1); border-color: var(--on-band); }
 .topbar .lang-switch { margin-left: 0; }
+.topbar .lang-btn { min-height: 40px; }
+.topbar .lang-btn:focus-visible { outline: 3px solid var(--on-band); outline-offset: 2px; }
 @media (max-width: 479px) {
-  .nav-long, .nav-wide { display: none; }
-  .nav-link { padding: 0 .5rem; }
+  .nav-long { display: none; }
+  .topbar { column-gap: .5rem; }
+  .nav-link { padding: 0 .4rem; }
+  .nav-cta { margin-left: 0; padding: 0 .85rem; }
   .topbar .lang-switch { order: 9; margin-left: auto; }
 }
+@media (max-width: 339px) { .nav-wide { display: none; } }
 .site-footer {
-  max-width: var(--page-max, 880px); margin: 0 auto; padding: 0 16px 3rem;
+  max-width: var(--chrome-max); margin: 0 auto; padding: 0 16px 3rem;
   color: var(--muted); font-size: .9rem; line-height: 1.6;
 }
 .site-footer-inner {
@@ -221,11 +229,13 @@ main p a, main li a {
 }
 .site-footer a { color: inherit; text-decoration: none; }
 .site-footer a:hover { color: var(--ink); text-decoration: underline; }
-.site-footer .footer-brand { color: var(--ink); font-weight: 750; font-size: 1.05rem; letter-spacing: -.02em; }
-.footer-tagline { margin: .25rem 0 0; max-width: 26ch; }
+.site-footer .footer-brand { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); font-weight: 750; font-size: 1.05rem; letter-spacing: -.02em; }
+.footer-tagline { margin: 0; max-width: 26ch; }
 .footer-title { margin: 0 0 .35rem; color: var(--ink); font-size: .85rem; font-weight: 700; }
 .footer-list { list-style: none; margin: 0; padding: 0; }
-.footer-list a { display: inline-flex; align-items: center; min-height: 32px; }
+.footer-list a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-footer li { margin: 0; color: inherit; }
+.site-footer .footer-tagline, .site-footer .footer-meta { color: inherit; }
 .footer-meta { grid-column: 1 / -1; margin: 0; padding-top: 1.25rem; border-top: var(--rule) solid var(--line); }
 .footer-meta a { text-decoration: underline; }
 .social { display: flex; gap: .25rem; list-style: none; margin: .75rem 0 0 -.65rem; padding: 0; }
@@ -237,7 +247,7 @@ main p a, main li a {
   .site-footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-about { grid-column: 1 / -1; }
 }
-:root { --page-max: 760px; }
+:root { --chrome-max: 960px; }
 </style>
 <script type="application/ld+json">
 {
@@ -321,14 +331,14 @@ main p a, main li a {
 </head>
 <body>
 <header class="band">
-  <div class="band-inner">
+  <div class="topbar-wrap">
     <div class="topbar">
       <a href="/" class="brand">
         <img src="/icon-192.png" width="34" height="34" alt="" class="brand-icon">
         <span>Vaelo</span>
       </a>
       <nav class="site-nav" aria-label="Principal">
-        <a href="/pro" class="nav-link"><span class="nav-long">Vaelo&nbsp;</span>Pro</a>
+        <a href="/pro" class="nav-link" aria-label="Vaelo Pro"><span class="nav-long">Vaelo&nbsp;</span>Pro</a>
         <a href="/suporte" class="nav-link nav-wide" aria-current="page">Suporte</a>
         <a href="https://app.vaelo.club/" class="nav-cta">Abrir app</a>
       </nav>
@@ -370,7 +380,7 @@ main p a, main li a {
       <ul class="footer-list">
         <li><a href="https://app.vaelo.club/">Abrir o app</a></li>
         <li><a href="/pro">Vaelo Pro</a></li>
-        <li><a href="/suporte">Suporte</a></li>
+        <li><a href="/suporte" aria-current="page">Suporte</a></li>
       </ul>
     </nav>
     <nav aria-label="Legal">
